@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ascend — The Certification Standard for Remote High-Ticket Sales</title>
+<meta name="description" content="Ascend trains, certifies and places Australians into real remote high-ticket sales roles. Applications open now.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===================================================================
+   ASCEND — TOKENS
+=================================================================== */
+:root{
+  --black:#060607;
+  --bg:#09090b;
+  --surface:#0f0f12;
+  --surface-2:#16161a;
+  --surface-3:#1f1f24;
+  --line:rgba(255,255,255,0.09);
+  --line-strong:rgba(255,255,255,0.16);
+  --white:#f5f5f3;
+  --grey-1:#adadb2;
+  --grey-2:#82828a;
+  --grey-3:#59595f;
+  --silver:#b7bbc2;
+  --silver-bright:#e2e4e8;
+  --silver-dim:rgba(183,187,194,0.14);
+  --silver-line:rgba(183,187,194,0.35);
+
+  --font-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --container:1280px;
+  --gutter:clamp(24px, 5vw, 64px);
+  --section-y:clamp(72px, 11vw, 160px);
+  --ease:cubic-bezier(.16,.84,.44,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--white);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+ul{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4,p{margin:0;}
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding-left:var(--gutter);
+  padding-right:var(--gutter);
+}
+::selection{background:var(--silver-dim); color:var(--white);}
+
+/* focus visibility */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+  outline:1px solid var(--silver);
+  outline-offset:4px;
+}
+
+/* ===================================================================
+   TYPE UTILITIES
+=================================================================== */
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--grey-1);
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.eyebrow::before{
+  content:"";
+  width:28px;
+  height:1px;
+  background:var(--silver-line);
+  display:inline-block;
+}
+.section-head{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  margin-bottom:clamp(40px, 6vw, 76px);
+}
+.section-title{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(32px, 4.6vw, 56px);
+  line-height:1.08;
+  letter-spacing:-.01em;
+  max-width:14ch;
+  text-wrap:balance;
+}
+.section-desc{
+  font-size:clamp(15px,1.4vw,17px);
+  color:var(--grey-1);
+  max-width:52ch;
+  font-weight:400;
+}
+.divider{
+  border:none;
+  border-top:1px solid var(--line);
+  margin:0;
+}
+.section{
+  padding:var(--section-y) 0;
+  position:relative;
+}
+.section-alt{
+  background:linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+}
+
+/* reveal-on-scroll */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .9s var(--ease), transform .9s var(--ease);
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.reveal-stagger > *{transition-delay:calc(var(--i,0) * 80ms);}
+
+/* buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-family:var(--font-body);
+  font-size:12.5px;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:16px 30px;
+  border-radius:2px;
+  white-space:nowrap;
+  transition:all .35s var(--ease);
+  border:1px solid transparent;
+}
+.btn-primary{
+  background:var(--white);
+  color:var(--black);
+  border-color:var(--white);
+}
+.btn-primary:hover{
+  background:var(--silver-bright);
+  border-color:var(--silver-bright);
+  box-shadow:0 0 0 1px var(--silver-bright), 0 8px 30px rgba(220,222,226,.12);
+}
+.btn-ghost{
+  background:transparent;
+  color:var(--white);
+  border-color:var(--line-strong);
+}
+.btn-ghost:hover{
+  border-color:var(--silver);
+  background:var(--silver-dim);
+}
+.btn-sm{padding:12px 22px; font-size:11.5px;}
+.btn svg{width:14px;height:14px;flex:none;}
+
+/* ===================================================================
+   NAV
+=================================================================== */
+.nav{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  padding:22px 0;
+  transition:padding .4s var(--ease), background .4s var(--ease), border-color .4s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.nav.is-scrolled{
+  padding:14px 0;
+  background:rgba(9,9,11,.82);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:var(--font-display);
+  font-size:23px;
+  letter-spacing:.06em;
+  font-weight:600;
+  flex:none;
+}
+.logo-mark{
+  width:9px;height:9px;
+  border:1px solid var(--silver);
+  transform:rotate(45deg);
+  flex:none;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:clamp(20px,2.6vw,40px);
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+.nav-links a{
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--grey-1);
+  position:relative;
+  padding:4px 0;
+  transition:color .3s var(--ease);
+}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0; right:100%;
+  bottom:0;
+  height:1px;
+  background:var(--silver);
+  transition:right .35s var(--ease);
+}
+.nav-links a:hover{color:var(--white);}
+.nav-links a:hover::after{right:0;}
+.nav-cta{flex:none;}
+.nav-burger{
+  display:none;
+  flex:none;
+  width:36px;height:36px;
+  border:1px solid var(--line-strong);
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  color:var(--white);
+}
+.nav-burger svg{width:16px;height:16px;}
+
+.mobile-panel{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  background:rgba(6,6,7,.98);
+  backdrop-filter:blur(10px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .4s var(--ease);
+}
+.mobile-panel.is-open{opacity:1; pointer-events:auto;}
+.mobile-panel a{
+  font-family:var(--font-display);
+  font-size:30px;
+  font-weight:500;
+  color:var(--white);
+}
+.mobile-panel .btn{margin-top:16px;}
+
+/* ===================================================================
+   HERO / VSL
+=================================================================== */
+.hero{
+  padding:clamp(140px,20vw,196px) 0 var(--section-y);
+  position:relative;
+}
+.hero-bg-grid{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 70% 55% at 50% 0%, black 10%, transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 0%, black 10%, transparent 75%);
+}
+.hero-inner{position:relative; z-index:1;}
+.hero-top{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:28px;
+  margin-bottom:clamp(48px,7vw,88px);
+}
+.hero-eyebrow{justify-content:center;}
+.hero-eyebrow::before{display:none;}
+.hero-eyebrow::after{
+  content:"";
+  width:28px;
+  height:1px;
+  background:var(--silver-line);
+}
+.hero-title{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(40px, 6.4vw, 92px);
+  line-height:1.03;
+  letter-spacing:-.015em;
+  max-width:17ch;
+  text-wrap:balance;
+}
+.hero-title em{
+  font-style:italic;
+  font-weight:400;
+  color:var(--silver-bright);
+}
+.hero-sub{
+  font-size:clamp(15px,1.5vw,18px);
+  color:var(--grey-1);
+  max-width:46ch;
+  font-weight:400;
+}
+.hero-actions{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:6px;
+}
+.hero-meta{
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:20px;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--grey-2);
+}
+.hero-meta span{display:flex; align-items:center; gap:8px;}
+.hero-meta i{width:5px;height:5px;background:var(--silver);border-radius:50%;display:inline-block;}
+
+/* Video frame */
+.vsl-frame-wrap{
+  position:relative;
+  max-width:960px;
+  margin:0 auto;
+}
+.vsl-frame{
+  position:relative;
+  border:1px solid var(--line-strong);
+  padding:10px;
+  background:linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,.4),
+    0 40px 100px -20px rgba(0,0,0,.8),
+    0 0 120px -40px rgba(183,187,194,.15);
+}
+.vsl-corner{
+  position:absolute;
+  width:22px;height:22px;
+  z-index:2;
+  pointer-events:none;
+}
+.vsl-corner::before,.vsl-corner::after{
+  content:"";
+  position:absolute;
+  background:var(--silver);
+}
+.vsl-corner::before{width:100%;height:1px;top:0;}
+.vsl-corner::after{width:1px;height:100%;left:0;}
+.vsl-corner.tl{top:-1px;left:-1px;}
+.vsl-corner.tr{top:-1px;right:-1px; transform:scaleX(-1);}
+.vsl-corner.bl{bottom:-1px;left:-1px; transform:scaleY(-1);}
+.vsl-corner.br{bottom:-1px;right:-1px; transform:scale(-1,-1);}
+.vsl-screen{
+  position:relative;
+  aspect-ratio:16/9;
+  background:
+    radial-gradient(ellipse at center, rgba(255,255,255,.05) 0%, transparent 60%),
+    #0c0c0e;
+  border:1px solid var(--line);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.vsl-screen::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:repeating-linear-gradient(180deg, rgba(255,255,255,.02) 0px, rgba(255,255,255,.02) 1px, transparent 1px, transparent 3px);
+  pointer-events:none;
+}
+.vsl-play{
+  position:relative;
+  z-index:2;
+  width:78px;height:78px;
+  border-radius:50%;
+  border:1px solid var(--silver-line);
+  background:rgba(255,255,255,.03);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all .4s var(--ease);
+  backdrop-filter:blur(4px);
+}
+.vsl-play::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:50%;
+  border:1px solid var(--silver-line);
+  opacity:0;
+  transform:scale(1);
+  transition:all .8s var(--ease);
+}
+.vsl-screen:hover .vsl-play{
+  background:var(--white);
+  border-color:var(--white);
+  transform:scale(1.06);
+}
+.vsl-screen:hover .vsl-play::before{opacity:1; transform:scale(1.35);}
+.vsl-screen:hover .vsl-play svg{fill:var(--black);}
+.vsl-play svg{width:20px;height:20px;fill:var(--white); margin-left:3px; transition:fill .3s var(--ease);}
+.vsl-caption-row{
+  position:absolute;
+  bottom:24px;left:32px;right:32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  z-index:2;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--grey-1);
+  pointer-events:none;
+}
+.vsl-caption-row .dur{font-variant-numeric:tabular-nums;}
+.vsl-watermark{
+  position:absolute; top:24px; left:32px;
+  font-family:var(--font-display);
+  font-size:15px;
+  letter-spacing:.08em;
+  color:var(--grey-2);
+  z-index:2;
+}
+.vsl-below{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-top:18px;
+  padding:0 4px;
+  font-size:11.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--grey-2);
+}
+.vsl-below .rec{display:flex;align-items:center;gap:8px;}
+.vsl-below .rec i{width:6px;height:6px;border-radius:50%;background:var(--silver); box-shadow:0 0 8px var(--silver);}
+
+/* Calendly section (below hero) */
+.booking-panel{
+  max-width:960px;
+  margin:clamp(56px,8vw,96px) auto 0;
+}
+.booking-head{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  align-items:center;
+  margin-bottom:32px;
+}
+.booking-head .eyebrow{justify-content:center;}
+.booking-head .eyebrow::before{display:none;}
+.booking-title{
+  font-family:var(--font-display);
+  font-size:clamp(26px,3.2vw,38px);
+  font-weight:500;
+}
+.booking-sub{color:var(--grey-1); max-width:44ch; font-size:14.5px;}
+.calendly-frame{
+  border:1px solid var(--line-strong);
+  background:var(--surface);
+  padding:1px;
+}
+.calendly-inner{
+  min-height:480px;
+  border:1px solid var(--line);
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.015) 0px, rgba(255,255,255,.015) 1px, transparent 1px, transparent 14px),
+    var(--bg);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  text-align:center;
+  padding:40px;
+}
+.calendly-icon{
+  width:48px;height:48px;
+  border:1px solid var(--silver-line);
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+}
+.calendly-icon svg{width:20px;height:20px;stroke:var(--silver);}
+.calendly-inner h4{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--grey-1);
+}
+.calendly-inner p{
+  font-size:12.5px;
+  color:var(--grey-3);
+  max-width:38ch;
+  font-family:'SFMono-Regular', ui-monospace, monospace;
+}
+
+/* ===================================================================
+   STATEMENT SECTION
+=================================================================== */
+.statement{
+  padding:var(--section-y) 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--surface);
+  position:relative;
+  overflow:hidden;
+}
+.statement-inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:40px;
+}
+.statement-text{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(30px, 5.4vw, 68px);
+  line-height:1.18;
+  max-width:19ch;
+  text-wrap:balance;
+}
+.statement-text .dim{color:var(--grey-3);}
+.statement-text .accent{
+  font-style:italic;
+  color:var(--silver-bright);
+}
+.statement-sub{
+  font-size:clamp(14px,1.3vw,16.5px);
+  color:var(--grey-1);
+  max-width:50ch;
+}
+
+/* ===================================================================
+   STATS
+=================================================================== */
+.stats-bar{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+}
+.stat-cell{
+  padding:clamp(32px,5vw,56px) clamp(16px,3vw,40px);
+  text-align:center;
+  border-right:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.stat-cell:last-child{border-right:none;}
+.stat-num{
+  font-family:var(--font-display);
+  font-size:clamp(40px,6vw,76px);
+  font-weight:500;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+  color:var(--white);
+}
+.stat-num .unit{color:var(--silver); font-size:.55em; vertical-align:.35em; font-family:var(--font-body); font-weight:600;}
+.stat-label{
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--grey-2);
+}
+
+/* ===================================================================
+   WHY SALES — FEATURE CARDS
+=================================================================== */
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.feature-card{
+  background:var(--bg);
+  padding:clamp(28px,3vw,40px) clamp(24px,2.6vw,32px);
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  transition:background .4s var(--ease);
+  position:relative;
+}
+.feature-card:hover{background:var(--surface);}
+.feature-icon{
+  width:44px;height:44px;
+  border:1px solid var(--line-strong);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:border-color .4s var(--ease);
+}
+.feature-card:hover .feature-icon{border-color:var(--silver);}
+.feature-icon svg{width:19px;height:19px;stroke:var(--silver); fill:none;}
+.feature-index{
+  font-family:var(--font-display);
+  font-size:13px;
+  color:var(--grey-3);
+  letter-spacing:.05em;
+}
+.feature-title{
+  font-family:var(--font-display);
+  font-size:22px;
+  font-weight:500;
+}
+.feature-desc{
+  font-size:13.8px;
+  color:var(--grey-1);
+  line-height:1.65;
+}
+
+/* ===================================================================
+   RESULTS MARQUEE
+=================================================================== */
+.results-section{overflow:hidden;}
+.marquee-viewport{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  -webkit-mask-image:linear-gradient(90deg, transparent 0, black 6%, black 94%, transparent 100%);
+  mask-image:linear-gradient(90deg, transparent 0, black 6%, black 94%, transparent 100%);
+}
+.marquee-row{
+  display:flex;
+  width:max-content;
+}
+.marquee-track{
+  display:flex;
+  gap:16px;
+  padding:2px 8px;
+  animation:scrollLeft 62s linear infinite;
+}
+.marquee-row.reverse .marquee-track{animation:scrollRight 70s linear infinite;}
+.marquee-viewport:hover .marquee-track{animation-play-state:paused;}
+@keyframes scrollLeft{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+@keyframes scrollRight{from{transform:translateX(-50%);} to{transform:translateX(0);}}
+
+.win-card{
+  flex:none;
+  width:300px;
+  border:1px solid var(--line);
+  background:var(--surface);
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  transition:border-color .3s var(--ease), transform .3s var(--ease);
+}
+.win-card:hover{border-color:var(--line-strong); transform:translateY(-3px);}
+.win-top{display:flex; align-items:center; gap:12px;}
+.win-avatar{
+  width:38px;height:38px;
+  border:1px solid var(--line-strong);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);
+  font-size:14px;
+  color:var(--silver);
+  flex:none;
+}
+.win-name{font-size:13.5px; font-weight:600;}
+.win-loc{font-size:11px; color:var(--grey-2); letter-spacing:.04em;}
+.win-path{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:11.5px;
+  color:var(--grey-2);
+  letter-spacing:.02em;
+}
+.win-path svg{width:11px;height:11px;stroke:var(--grey-3); flex:none;}
+.win-path .to{color:var(--silver-bright); font-weight:500;}
+.win-quote{
+  font-size:13.5px;
+  color:var(--grey-1);
+  line-height:1.6;
+  font-style:italic;
+  font-family:var(--font-display);
+  font-size:17px;
+}
+.win-figure{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+.win-figure .amt{font-family:var(--font-display); font-size:21px; color:var(--white);}
+.win-figure .tag{font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--grey-3); display:flex; align-items:center; gap:5px;}
+.win-figure .tag svg{width:10px;height:10px;stroke:var(--silver);}
+
+/* ===================================================================
+   HOW IT WORKS — STEPPER
+=================================================================== */
+.stepper{display:flex; flex-direction:column; gap:0;}
+.stepper-rail{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  margin-bottom:0;
+}
+.step-tab{
+  background:transparent;
+  border:none;
+  border-top:2px solid var(--line);
+  color:var(--grey-2);
+  text-align:left;
+  padding:24px 24px 24px 0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition:border-color .4s var(--ease), color .4s var(--ease);
+  position:relative;
+}
+.step-tab::before{
+  content:"";
+  position:absolute;
+  top:-2px; left:0; right:100%;
+  height:2px;
+  background:var(--silver);
+  transition:right .5s var(--ease);
+}
+.step-tab.is-active{color:var(--white);}
+.step-tab.is-active::before{right:0;}
+.step-tab .step-num{
+  font-family:var(--font-display);
+  font-size:14px;
+  color:var(--grey-3);
+  transition:color .4s var(--ease);
+}
+.step-tab.is-active .step-num{color:var(--silver);}
+.step-tab .step-name{
+  font-family:var(--font-display);
+  font-size:clamp(22px,2.4vw,30px);
+  font-weight:500;
+}
+.step-tab .step-tagline{font-size:12.5px; color:var(--grey-2); letter-spacing:.02em;}
+
+.step-panels{
+  margin-top:clamp(36px,5vw,60px);
+  position:relative;
+  min-height:340px;
+}
+.step-panel{
+  display:none;
+  grid-template-columns:1.1fr .9fr;
+  gap:clamp(32px,5vw,72px);
+  align-items:start;
+}
+.step-panel.is-active{display:grid; animation:fadeUp .6s var(--ease);}
+@keyframes fadeUp{from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);}}
+.step-panel-desc{
+  font-size:clamp(15px,1.5vw,18px);
+  color:var(--grey-1);
+  line-height:1.7;
+  max-width:48ch;
+}
+.step-panel-desc strong{color:var(--white); font-weight:600;}
+.step-checklist{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:28px;
+}
+.step-checklist li{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  font-size:13.8px;
+  color:var(--grey-1);
+}
+.step-checklist svg{width:14px;height:14px;stroke:var(--silver); flex:none; margin-top:2px;}
+.step-meta-card{
+  border:1px solid var(--line);
+  background:var(--surface);
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.step-meta-row{
+  display:flex;
+  justify-content:space-between;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--line);
+  font-size:12.5px;
+}
+.step-meta-row:last-child{border-bottom:none; padding-bottom:0;}
+.step-meta-row .k{color:var(--grey-2); letter-spacing:.06em; text-transform:uppercase; font-size:11px;}
+.step-meta-row .v{color:var(--white); font-weight:600; font-family:var(--font-display); font-size:17px;}
+
+/* ===================================================================
+   PLATFORM — TABS
+=================================================================== */
+.platform-shell{
+  border:1px solid var(--line);
+  background:var(--surface);
+}
+.platform-tabs{
+  display:flex;
+  overflow-x:auto;
+  border-bottom:1px solid var(--line);
+  scrollbar-width:none;
+}
+.platform-tabs::-webkit-scrollbar{display:none;}
+.ptab{
+  flex:none;
+  background:transparent;
+  border:none;
+  padding:20px 26px;
+  font-size:11.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--grey-2);
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+  transition:color .3s var(--ease), border-color .3s var(--ease);
+  white-space:nowrap;
+}
+.ptab.is-active{color:var(--white); border-color:var(--silver);}
+.ptab:hover{color:var(--white);}
+.platform-body{
+  display:none;
+  grid-template-columns:.85fr 1.15fr;
+  gap:0;
+}
+.platform-body.is-active{display:grid; animation:fadeUp .5s var(--ease);}
+.platform-copy{
+  padding:clamp(32px,4vw,56px);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  justify-content:center;
+  border-right:1px solid var(--line);
+}
+.platform-copy .eyebrow::before{display:none;}
+.platform-copy h3{
+  font-family:var(--font-display);
+  font-size:clamp(24px,2.6vw,32px);
+  font-weight:500;
+}
+.platform-copy p{font-size:14px; color:var(--grey-1); line-height:1.7;}
+.platform-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;}
+.ptag{
+  font-size:10.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--grey-2);
+  border:1px solid var(--line-strong);
+  padding:6px 12px;
+}
+.platform-shot{
+  padding:clamp(24px,3vw,40px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.mock-window{
+  width:100%;
+  border:1px solid var(--line-strong);
+  background:#0c0c0e;
+  aspect-ratio:16/10.5;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 30px 70px -20px rgba(0,0,0,.7);
+}
+.mock-bar{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:11px 14px;
+  border-bottom:1px solid var(--line);
+  flex:none;
+}
+.mock-bar i{width:7px;height:7px;border-radius:50%;border:1px solid var(--line-strong);}
+.mock-bar .mock-url{
+  margin-left:10px;
+  font-size:10px;
+  color:var(--grey-3);
+  letter-spacing:.04em;
+  font-family:ui-monospace, monospace;
+}
+.mock-body{
+  flex:1;
+  display:grid;
+  grid-template-columns:70px 1fr;
+  min-height:0;
+}
+.mock-side{
+  border-right:1px solid var(--line);
+  padding:16px 10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.mock-side i{height:6px; background:var(--surface-3); border-radius:1px;}
+.mock-side i:nth-child(1){width:70%;}
+.mock-side i:nth-child(2){width:50%;}
+.mock-side i:nth-child(3){width:60%;}
+.mock-side i:nth-child(4){width:40%;}
+.mock-main{padding:18px; display:flex; flex-direction:column; gap:12px;}
+.mock-row{display:flex; gap:12px;}
+.mock-block{background:var(--surface-2); border:1px solid var(--line); flex:1; min-height:34px;}
+.mock-block.tall{min-height:90px;}
+.mock-block.accent{border-color:var(--silver-line);}
+.mock-watermark{
+  position:absolute;
+  font-family:var(--font-display);
+  font-style:italic;
+  color:var(--grey-3);
+  font-size:11px;
+  align-self:flex-end;
+  margin-top:auto;
+}
+
+/* ===================================================================
+   TEAM
+=================================================================== */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.coach-card{
+  background:var(--bg);
+  padding:clamp(28px,3vw,34px) clamp(22px,2.4vw,28px);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  transition:background .4s var(--ease);
+}
+.coach-card:hover{background:var(--surface);}
+.coach-photo{
+  width:100%;
+  aspect-ratio:4/5;
+  border:1px solid var(--line-strong);
+  background:
+    linear-gradient(160deg, var(--surface-2) 0%, var(--surface) 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.coach-photo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:16px 16px;
+}
+.coach-initials{
+  font-family:var(--font-display);
+  font-size:44px;
+  color:var(--grey-3);
+  position:relative;
+  z-index:1;
+  letter-spacing:.04em;
+}
+.coach-name{font-family:var(--font-display); font-size:22px; font-weight:500;}
+.coach-title{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--silver); margin-top:-12px;}
+.coach-bio{font-size:13.2px; color:var(--grey-1); line-height:1.65;}
+.coach-accolades{display:flex; flex-direction:column; gap:8px; margin-top:4px; padding-top:16px; border-top:1px solid var(--line);}
+.coach-accolades li{display:flex; gap:8px; align-items:center; font-size:11.5px; color:var(--grey-2);}
+.coach-accolades svg{width:11px;height:11px; stroke:var(--silver); flex:none;}
+
+/* ===================================================================
+   FINAL BOOKING
+=================================================================== */
+.final-grid{
+  display:grid;
+  grid-template-columns:1.3fr .9fr;
+  gap:clamp(40px,5vw,64px);
+  align-items:stretch;
+}
+.final-cta-title{
+  font-family:var(--font-display);
+  font-size:clamp(30px,4vw,48px);
+  font-weight:500;
+  line-height:1.12;
+  max-width:14ch;
+  margin-bottom:18px;
+  text-wrap:balance;
+}
+.final-cta-sub{color:var(--grey-1); font-size:14.5px; max-width:44ch; margin-bottom:32px;}
+.final-calendly{
+  border:1px solid var(--line-strong);
+  background:var(--surface);
+  padding:1px;
+}
+.final-calendly .calendly-inner{min-height:400px;}
+.apply-card{
+  border:1px solid var(--line);
+  background:var(--surface);
+  padding:clamp(28px,3vw,40px);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  justify-content:center;
+}
+.apply-card h4{font-family:var(--font-display); font-size:24px; font-weight:500;}
+.apply-card p{font-size:13.8px; color:var(--grey-1); line-height:1.65;}
+.apply-list{display:flex; flex-direction:column; gap:10px; margin:4px 0 8px;}
+.apply-list li{display:flex; gap:10px; font-size:12.5px; color:var(--grey-2);}
+.apply-list li span{color:var(--silver); font-family:var(--font-display); font-style:italic;}
+
+/* ===================================================================
+   FOOTER
+=================================================================== */
+.footer{
+  border-top:1px solid var(--line);
+  padding:clamp(56px,7vw,88px) 0 32px;
+}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.4fr repeat(3,1fr);
+  gap:clamp(32px,5vw,40px);
+  padding-bottom:clamp(40px,6vw,64px);
+}
+.footer-brand{display:flex; flex-direction:column; gap:18px; max-width:34ch;}
+.footer-brand p{font-size:13px; color:var(--grey-2); line-height:1.7;}
+.footer-social{display:flex; gap:12px; margin-top:6px;}
+.footer-social a{
+  width:34px;height:34px;
+  border:1px solid var(--line-strong);
+  display:flex; align-items:center; justify-content:center;
+  transition:border-color .3s var(--ease), color .3s var(--ease);
+}
+.footer-social a:hover{border-color:var(--silver); color:var(--silver);}
+.footer-social svg{width:14px;height:14px;}
+.footer-col h5{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--grey-2);
+  margin-bottom:18px;
+}
+.footer-col ul{display:flex; flex-direction:column; gap:12px;}
+.footer-col a{font-size:13.5px; color:var(--grey-1); transition:color .3s var(--ease);}
+.footer-col a:hover{color:var(--white);}
+.footer-bottom{
+  padding-top:28px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+  font-size:11.5px;
+  color:var(--grey-3);
+  letter-spacing:.03em;
+}
+.footer-bottom a{color:var(--grey-3);}
+.footer-bottom a:hover{color:var(--grey-1);}
+
+/* ===================================================================
+   RESPONSIVE
+=================================================================== */
+@media (max-width:1024px){
+  .nav-links{display:none;}
+  .nav-burger{display:flex;}
+  .features-grid{grid-template-columns:repeat(2,1fr);}
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .final-grid{grid-template-columns:1fr;}
+  .platform-body.is-active{grid-template-columns:1fr;}
+  .platform-copy{border-right:none; border-bottom:1px solid var(--line);}
+  .step-panel.is-active{grid-template-columns:1fr; gap:32px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:720px){
+  .stats-bar{grid-template-columns:1fr;}
+  .stat-cell{border-right:none; border-bottom:1px solid var(--line); padding:32px 16px;}
+  .stat-cell:last-child{border-bottom:none;}
+  .stepper-rail{grid-template-columns:1fr; gap:0;}
+  .step-tab{padding:18px 0;}
+  .footer-top{grid-template-columns:1fr;}
+  .win-card{width:260px;}
+}
+@media (max-width:600px){
+  .features-grid{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr;}
+  .hero-meta{gap:16px; flex-direction:column; align-items:center;}
+  .vsl-caption-row{left:16px; right:16px; bottom:14px; flex-direction:column; align-items:flex-start; gap:4px;}
+  .vsl-watermark{top:14px; left:16px; font-size:12px;}
+  .btn{padding:15px 24px;}
+  .hero-actions{flex-direction:column; width:100%;}
+  .hero-actions .btn{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+=============================================================== -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo"><span class="logo-mark"></span>ASCEND</a>
+    <div class="nav-links">
+      <a href="#program">Program</a>
+      <a href="#results">Results</a>
+      <a href="#process">Process</a>
+      <a href="#platform">Platform</a>
+      <a href="#team">Team</a>
+    </div>
+    <a href="#book" class="btn btn-ghost btn-sm nav-cta">Book a Call</a>
+    <button class="nav-burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#program">Program</a>
+  <a href="#results">Results</a>
+  <a href="#process">Process</a>
+  <a href="#platform">Platform</a>
+  <a href="#team">Team</a>
+  <a href="#book" class="btn btn-primary">Book a Call</a>
+</div>
+
+<!-- ============================================================
+     HERO + VSL
+=============================================================== -->
+<header class="hero" id="top">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-top reveal is-visible">
+      <div class="eyebrow hero-eyebrow">Est. Remote Sales Certification · Australia</div>
+      <h1 class="hero-title">The Certification Standard for<br><em>Remote High-Ticket Sales.</em></h1>
+      <p class="hero-sub">We train, certify and place ambitious 18–30 year olds into real closing roles with real companies — no cold outreach required to get started, no fluff, no guesswork.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn btn-primary">Book Your Application Call</a>
+        <a href="#process" class="btn btn-ghost">See How It Works</a>
+      </div>
+      <div class="hero-meta">
+        <span><i></i>200+ Members Certified</span>
+        <span><i></i>21-Day Avg. Placement</span>
+        <span><i></i>Applications Open Now</span>
+      </div>
+    </div>
+
+    <div class="vsl-frame-wrap reveal" id="vslWrap">
+      <div class="vsl-frame">
+        <div class="vsl-corner tl"></div>
+        <div class="vsl-corner tr"></div>
+        <div class="vsl-corner bl"></div>
+        <div class="vsl-corner br"></div>
+        <div class="vsl-screen" id="vslScreen" role="button" tabindex="0" aria-label="Play the Ascend introduction video">
+          <div class="vsl-watermark">ASCEND — 001</div>
+          <button class="vsl-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"/></svg>
+          </button>
+          <div class="vsl-caption-row">
+            <span>The Ascend Method — How Certification Works</span>
+            <span class="dur">04:12</span>
+          </div>
+        </div>
+      </div>
+      <div class="vsl-below">
+        <span class="rec"><i></i>Placeholder video — replace source in &lt;video&gt; / embed</span>
+        <span>1080p · No sound autoplay</span>
+      </div>
+    </div>
+
+    <div class="booking-panel reveal" id="book">
+      <div class="booking-head">
+        <div class="eyebrow">Admissions</div>
+        <h2 class="booking-title">Book a 15-Minute Call With Our Team</h2>
+        <p class="booking-sub">We'll assess your fit for the next certification intake and walk you through timelines, cost and placement pathways.</p>
+      </div>
+      <div class="calendly-frame">
+        <div class="calendly-inner">
+          <div class="calendly-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          </div>
+          <h4>Calendly Embed Placeholder</h4>
+          <p>&lt;div class="calendly-inline-widget" data-url="your-calendly-link"&gt;&lt;/div&gt;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     STATEMENT
+=============================================================== -->
+<section class="statement">
+  <div class="container statement-inner">
+    <div class="eyebrow reveal">The Thesis</div>
+    <h2 class="statement-text reveal">Every skill you learn today<br>will eventually be automated.<br><span class="accent">Except this one.</span></h2>
+    <p class="statement-sub reveal">Sales is the only discipline that compounds — the better you get, the more irreplaceable you become. It's not a job. It's leverage you carry for the rest of your life.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS
+=============================================================== -->
+<section class="section" style="padding-top:0; padding-bottom:0;">
+  <div class="container" style="padding-left:0; padding-right:0;">
+    <div class="stats-bar reveal reveal-stagger">
+      <div class="stat-cell" style="--i:0">
+        <div class="stat-num">200<span class="unit">+</span></div>
+        <div class="stat-label">Members Certified</div>
+      </div>
+      <div class="stat-cell" style="--i:1">
+        <div class="stat-num">$2.4M<span class="unit">+</span></div>
+        <div class="stat-label">Earned By Members</div>
+      </div>
+      <div class="stat-cell" style="--i:2">
+        <div class="stat-num">21</div>
+        <div class="stat-label">Avg. Days, Cert to Placement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY SALES
+=============================================================== -->
+<section class="section section-alt" id="program">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow reveal">Why This Skill</div>
+      <h2 class="section-title reveal">A skill that pays you for the rest of your career.</h2>
+      <p class="section-desc reveal">Companies don't automate the function that generates their revenue. They protect it, and they pay well for people who can run it.</p>
+    </div>
+    <div class="features-grid reveal reveal-stagger">
+      <div class="feature-card" style="--i:0">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" stroke-width="1.4"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg></div>
+        <div class="feature-index">01</div>
+        <h3 class="feature-title">Recession-Proof</h3>
+        <p class="feature-desc">Every company on earth needs revenue. When budgets get cut, sales is the last department standing — and often the first to hire.</p>
+      </div>
+      <div class="feature-card" style="--i:1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" stroke-width="1.4"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z"/></svg></div>
+        <div class="feature-index">02</div>
+        <h3 class="feature-title">No Degree Required</h3>
+        <p class="feature-desc">Merit over credentials. Your close rate is your resume — certified members are hired on ability, not a piece of paper.</p>
+      </div>
+      <div class="feature-card" style="--i:2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 010 18M3 12h18"/></svg></div>
+        <div class="feature-index">03</div>
+        <h3 class="feature-title">Remote By Design</h3>
+        <p class="feature-desc">Every role we place into is fully remote. Work from anywhere in Australia, closing deals for companies across the globe.</p>
+      </div>
+      <div class="feature-card" style="--i:3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" stroke-width="1.4"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></div>
+        <div class="feature-index">04</div>
+        <h3 class="feature-title">Uncapped Income</h3>
+        <p class="feature-desc">Commission-based roles mean your ceiling is set by your output, not your job title or your years of experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MEMBER RESULTS — MARQUEE
+=============================================================== -->
+<section class="section results-section" id="results">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow reveal">Member Results</div>
+      <h2 class="section-title reveal">Real placements. Real earnings.</h2>
+      <p class="section-desc reveal">A running record of certified members and the roles, companies and income they've landed since graduating.</p>
+    </div>
+  </div>
+
+  <div class="marquee-viewport reveal" id="marqueeViewport">
+    <div class="marquee-row">
+      <div class="marquee-track" id="track1"></div>
+    </div>
+    <div class="marquee-row reverse">
+      <div class="marquee-track" id="track2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS — STEPPER
+=============================================================== -->
+<section class="section section-alt" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow reveal">The Pathway</div>
+      <h2 class="section-title reveal">Three stages. One outcome.</h2>
+      <p class="section-desc reveal">A fixed sequence with no shortcuts — every member moves through the same standard, in the same order.</p>
+    </div>
+
+    <div class="stepper reveal" id="stepper">
+      <div class="stepper-rail" role="tablist">
+        <button class="step-tab is-active" data-step="0" role="tab" aria-selected="true">
+          <span class="step-num">01</span>
+          <span class="step-name">Training</span>
+          <span class="step-tagline">4-week live curriculum</span>
+        </button>
+        <button class="step-tab" data-step="1" role="tab" aria-selected="false">
+          <span class="step-num">02</span>
+          <span class="step-name">Certification</span>
+          <span class="step-tagline">Practical roleplay exam</span>
+        </button>
+        <button class="step-tab" data-step="2" role="tab" aria-selected="false">
+          <span class="step-num">03</span>
+          <span class="step-name">Placement</span>
+          <span class="step-tagline">Warm intro to partners</span>
+        </button>
+      </div>
+
+      <div class="step-panels">
+        <div class="step-panel is-active" data-panel="0">
+          <div>
+            <p class="step-panel-desc">Four weeks of live and recorded training covering <strong>discovery, objection handling, closing frameworks and CRM fluency</strong> — taught by coaches who close six and seven figures a year themselves.</p>
+            <ul class="step-checklist">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Live coaching calls, 3x per week</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Full call-recording breakdown library</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Weekly graded roleplay drills</li>
+            </ul>
+          </div>
+          <div class="step-meta-card">
+            <div class="step-meta-row"><span class="k">Format</span><span class="v">Live + Recorded</span></div>
+            <div class="step-meta-row"><span class="k">Duration</span><span class="v">4 Weeks</span></div>
+            <div class="step-meta-row"><span class="k">Delivery</span><span class="v">100% Remote</span></div>
+          </div>
+        </div>
+
+        <div class="step-panel" data-panel="1">
+          <div>
+            <p class="step-panel-desc">Members sit a <strong>live roleplay assessment and a final closing exam</strong>, graded directly by senior coaches against the Ascend certification rubric. No self-paced quizzes — this is a practical standard.</p>
+            <ul class="step-checklist">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Graded live by senior coaching staff</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Scored against a fixed rubric, not a curve</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>One re-sit included if required</li>
+            </ul>
+          </div>
+          <div class="step-meta-card">
+            <div class="step-meta-row"><span class="k">Format</span><span class="v">Practical Exam</span></div>
+            <div class="step-meta-row"><span class="k">Duration</span><span class="v">3–5 Days</span></div>
+            <div class="step-meta-row"><span class="k">Standard</span><span class="v">Pass / Re-sit</span></div>
+          </div>
+        </div>
+
+        <div class="step-panel" data-panel="2">
+          <div>
+            <p class="step-panel-desc">Certified members are placed directly into <strong>vetted partner companies</strong> hiring remote closers. We prep you for interviews and make the introduction — you walk in as a known quantity, not a cold applicant.</p>
+            <ul class="step-checklist">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Direct warm introduction to hiring partners</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>1:1 interview preparation</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Ongoing support through your first 90 days</li>
+            </ul>
+          </div>
+          <div class="step-meta-card">
+            <div class="step-meta-row"><span class="k">Format</span><span class="v">Warm Intro</span></div>
+            <div class="step-meta-row"><span class="k">Duration</span><span class="v">Avg. 21 Days</span></div>
+            <div class="step-meta-row"><span class="k">Outcome</span><span class="v">Real Offer</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PLATFORM — TABS
+=============================================================== -->
+<section class="section" id="platform">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow reveal">The Platform</div>
+      <h2 class="section-title reveal">Everything runs in one system.</h2>
+      <p class="section-desc reveal">Members train, get certified and stay supported inside a single internal platform built for Ascend.</p>
+    </div>
+
+    <div class="platform-shell reveal" id="platformShell">
+      <div class="platform-tabs" role="tablist">
+        <button class="ptab is-active" data-tab="0">Certification Portal</button>
+        <button class="ptab" data-tab="1">Training Calls</button>
+        <button class="ptab" data-tab="2">Member Dashboard</button>
+        <button class="ptab" data-tab="3">Community</button>
+        <button class="ptab" data-tab="4">Roleplay Hub</button>
+      </div>
+
+      <div class="platform-body is-active" data-body="0">
+        <div class="platform-copy">
+          <div class="eyebrow">01 / Certification Portal</div>
+          <h3>Track your standing in real time.</h3>
+          <p>Every module, assessment and exam result lives in one place, with your certification status updated the moment coaches grade your work.</p>
+          <div class="platform-tags"><span class="ptag">Progress Tracking</span><span class="ptag">Exam Scheduling</span><span class="ptag">Digital Certificate</span></div>
+        </div>
+        <div class="platform-shot">
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">portal.ascend.au/certification</span></div>
+            <div class="mock-body">
+              <div class="mock-side"><i></i><i></i><i></i><i></i></div>
+              <div class="mock-main">
+                <div class="mock-row"><div class="mock-block accent"></div><div class="mock-block"></div></div>
+                <div class="mock-block tall"></div>
+                <div class="mock-row"><div class="mock-block"></div><div class="mock-block"></div><div class="mock-block"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-body" data-body="1">
+        <div class="platform-copy">
+          <div class="eyebrow">02 / Training Calls</div>
+          <h3>Live coaching, three times a week.</h3>
+          <p>Join scheduled live sessions with coaches, or pull up any past call from the searchable recording archive.</p>
+          <div class="platform-tags"><span class="ptag">Live Schedule</span><span class="ptag">Recording Archive</span><span class="ptag">Timestamped Notes</span></div>
+        </div>
+        <div class="platform-shot">
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">portal.ascend.au/calls</span></div>
+            <div class="mock-body">
+              <div class="mock-side"><i></i><i></i><i></i><i></i></div>
+              <div class="mock-main">
+                <div class="mock-block tall accent"></div>
+                <div class="mock-row"><div class="mock-block"></div><div class="mock-block"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-body" data-body="2">
+        <div class="platform-copy">
+          <div class="eyebrow">03 / Member Dashboard</div>
+          <h3>Your entire journey, one screen.</h3>
+          <p>Progress, upcoming calls, placement status and resources — the dashboard is the single home base for every active member.</p>
+          <div class="platform-tags"><span class="ptag">Unified Overview</span><span class="ptag">Milestone Tracking</span><span class="ptag">Resource Library</span></div>
+        </div>
+        <div class="platform-shot">
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">portal.ascend.au/dashboard</span></div>
+            <div class="mock-body">
+              <div class="mock-side"><i></i><i></i><i></i><i></i></div>
+              <div class="mock-main">
+                <div class="mock-row"><div class="mock-block accent"></div><div class="mock-block"></div><div class="mock-block"></div></div>
+                <div class="mock-row"><div class="mock-block tall"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-body" data-body="3">
+        <div class="platform-copy">
+          <div class="eyebrow">04 / Community</div>
+          <h3>Surrounded by people doing the work.</h3>
+          <p>A private member community for accountability, deal reviews, and staying sharp long after certification.</p>
+          <div class="platform-tags"><span class="ptag">Private Channels</span><span class="ptag">Deal Reviews</span><span class="ptag">Alumni Network</span></div>
+        </div>
+        <div class="platform-shot">
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">portal.ascend.au/community</span></div>
+            <div class="mock-body">
+              <div class="mock-side"><i></i><i></i><i></i><i></i></div>
+              <div class="mock-main">
+                <div class="mock-row"><div class="mock-block"></div></div>
+                <div class="mock-row"><div class="mock-block"></div></div>
+                <div class="mock-row"><div class="mock-block accent"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-body" data-body="4">
+        <div class="platform-copy">
+          <div class="eyebrow">05 / Roleplay Hub</div>
+          <h3>Practice against real objections.</h3>
+          <p>Structured roleplay scenarios and peer practice matching, so you walk into your certification exam having already handled it a hundred times.</p>
+          <div class="platform-tags"><span class="ptag">Scenario Library</span><span class="ptag">Peer Matching</span><span class="ptag">Coach Feedback</span></div>
+        </div>
+        <div class="platform-shot">
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">portal.ascend.au/roleplay</span></div>
+            <div class="mock-body">
+              <div class="mock-side"><i></i><i></i><i></i><i></i></div>
+              <div class="mock-main">
+                <div class="mock-block tall"></div>
+                <div class="mock-row"><div class="mock-block accent"></div><div class="mock-block"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TEAM
+=============================================================== -->
+<section class="section section-alt" id="team">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow reveal">Meet The Team</div>
+      <h2 class="section-title reveal">Coached by people who still close.</h2>
+      <p class="section-desc reveal">Every coach on staff carries an active production number — nobody teaches from theory alone.</p>
+    </div>
+
+    <div class="team-grid reveal reveal-stagger">
+      <div class="coach-card" style="--i:0">
+        <div class="coach-photo"><span class="coach-initials">JM</span></div>
+        <h3 class="coach-name">James Mercer</h3>
+        <div class="coach-title">Founder &amp; Head Coach</div>
+        <p class="coach-bio">Built and led three remote sales floors before founding Ascend to standardise how the skill is taught in Australia.</p>
+        <ul class="coach-accolades">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>$14M+ Personally Closed</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>Ex-Head of Sales, Vantage Group</li>
+        </ul>
+      </div>
+      <div class="coach-card" style="--i:1">
+        <div class="coach-photo"><span class="coach-initials">SC</span></div>
+        <h3 class="coach-name">Sarah Coleman</h3>
+        <div class="coach-title">Head of Sales Training</div>
+        <p class="coach-bio">Designs the certification curriculum and personally grades final exams for every certifying cohort.</p>
+        <ul class="coach-accolades">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>350+ Reps Trained</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>Ex-Enterprise AE, SaaS</li>
+        </ul>
+      </div>
+      <div class="coach-card" style="--i:2">
+        <div class="coach-photo"><span class="coach-initials">DK</span></div>
+        <h3 class="coach-name">Daniel Kwan</h3>
+        <div class="coach-title">Director of Placements</div>
+        <p class="coach-bio">Runs the partner network — the companies that hire directly out of every certifying cohort.</p>
+        <ul class="coach-accolades">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>60+ Hiring Partners</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>Ex-Talent Lead, Employment Hero</li>
+        </ul>
+      </div>
+      <div class="coach-card" style="--i:3">
+        <div class="coach-photo"><span class="coach-initials">RP</span></div>
+        <h3 class="coach-name">Ruby Patterson</h3>
+        <div class="coach-title">Community &amp; Roleplay Lead</div>
+        <p class="coach-bio">Runs live roleplay sessions and keeps the member community sharp between training weeks.</p>
+        <ul class="coach-accolades">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>Ascend Cohort 1 Graduate</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>$6M+ Personally Closed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL BOOKING
+=============================================================== -->
+<section class="section" id="apply">
+  <div class="container">
+    <div class="final-grid reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:20px;">Start Here</div>
+        <h2 class="final-cta-title">Book a call, or apply direct.</h2>
+        <p class="final-cta-sub">Applications for the next certification intake are open. Most members hear back within 48 hours of booking a call.</p>
+        <div class="final-calendly">
+          <div class="calendly-inner">
+            <div class="calendly-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <h4>Calendly Embed Placeholder</h4>
+            <p>&lt;div class="calendly-inline-widget" data-url="your-calendly-link"&gt;&lt;/div&gt;</p>
+          </div>
+        </div>
+      </div>
+      <div class="apply-card">
+        <h4>Prefer to apply first?</h4>
+        <p>Skip straight to our written application. It takes about six minutes and our admissions team reviews every submission by hand.</p>
+        <ul class="apply-list">
+          <li><span>—</span>No experience required</li>
+          <li><span>—</span>18–30 years old, based in Australia</li>
+          <li><span>—</span>Full-time availability preferred</li>
+        </ul>
+        <a href="#" class="btn btn-ghost" style="width:100%;">Open Application (Typeform)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+=============================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="logo"><span class="logo-mark"></span>ASCEND</a>
+        <p>The certification standard for remote high-ticket sales in Australia. We train, certify and place.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2.5 2.5 0 015 0V17M12 10v7"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 3v11a3.5 3.5 0 11-3.5-3.5M14 3a5 5 0 005 5"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Program</h5>
+        <ul>
+          <li><a href="#program">Why Sales</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#platform">The Platform</a></li>
+          <li><a href="#results">Member Results</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#team">Our Coaches</a></li>
+          <li><a href="#book">Book a Call</a></li>
+          <li><a href="#apply">Apply Now</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Ascend Sales Academy Pty Ltd. All rights reserved.</span>
+      <span>ABN 00 000 000 000 · Sydney, Australia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Nav scroll state ---------- */
+  var nav = document.getElementById('nav');
+  var onScroll = function(){
+    if(window.scrollY > 40){ nav.classList.add('is-scrolled'); }
+    else{ nav.classList.remove('is-scrolled'); }
+  };
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- Mobile menu ---------- */
+  var burger = document.getElementById('burgerBtn');
+  var panel = document.getElementById('mobilePanel');
+  burger.addEventListener('click', function(){
+    var open = panel.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      panel.classList.remove('is-open');
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* ---------- VSL placeholder click ---------- */
+  var vslScreen = document.getElementById('vslScreen');
+  var vslActivate = function(){
+    vslScreen.querySelector('.vsl-watermark').textContent = 'Replace with real <video> or embed';
+  };
+  vslScreen.addEventListener('click', vslActivate);
+  vslScreen.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); vslActivate(); }
+  });
+
+  /* ---------- How It Works stepper ---------- */
+  var stepTabs = document.querySelectorAll('.step-tab');
+  var stepPanels = document.querySelectorAll('.step-panel');
+  stepTabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var idx = tab.getAttribute('data-step');
+      stepTabs.forEach(function(t){ t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+      stepPanels.forEach(function(p){ p.classList.remove('is-active'); });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected','true');
+      document.querySelector('.step-panel[data-panel="'+idx+'"]').classList.add('is-active');
+    });
+  });
+  var stepTimer = setInterval(function(){
+    var activeIdx = parseInt(document.querySelector('.step-tab.is-active').getAttribute('data-step'), 10);
+    var next = (activeIdx + 1) % stepTabs.length;
+    stepTabs[next].click();
+  }, 6000);
+  document.getElementById('stepper').addEventListener('mouseenter', function(){ clearInterval(stepTimer); });
+
+  /* ---------- Platform tabs ---------- */
+  var pTabs = document.querySelectorAll('.ptab');
+  var pBodies = document.querySelectorAll('.platform-body');
+  pTabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var idx = tab.getAttribute('data-tab');
+      pTabs.forEach(function(t){ t.classList.remove('is-active'); });
+      pBodies.forEach(function(b){ b.classList.remove('is-active'); });
+      tab.classList.add('is-active');
+      document.querySelector('.platform-body[data-body="'+idx+'"]').classList.add('is-active');
+    });
+  });
+
+  /* ---------- Member results marquee ---------- */
+  var wins = [
+    {name:"Connor Blake", loc:"Brisbane, QLD", from:"Retail Assistant", to:"Remote Closer", quote:"Booked my first deal in week two of placement.", amt:"$18,400", tag:"First Month Commission"},
+    {name:"Amara Singh", loc:"Melbourne, VIC", from:"Uni Student", to:"Account Executive", quote:"Went from zero sales experience to closing daily.", amt:"$142,000", tag:"Annualised OTE"},
+    {name:"Liam Foster", loc:"Perth, WA", from:"Barista", to:"Senior Closer", quote:"Certification felt harder than the actual job.", amt:"$26,900", tag:"Best Single Month"},
+    {name:"Chloe Nguyen", loc:"Sydney, NSW", from:"Admin Assistant", to:"Remote Closer", quote:"Placed with a partner company in 16 days flat.", amt:"$19,750", tag:"First Month Commission"},
+    {name:"Mitchell Ross", loc:"Adelaide, SA", from:"Tradie", to:"Sales Team Lead", quote:"Promoted to team lead inside five months.", amt:"$168,000", tag:"Annualised OTE"},
+    {name:"Priya Anand", loc:"Gold Coast, QLD", from:"Hospitality", to:"Account Executive", quote:"The roleplay hub is why I passed first attempt.", amt:"$21,300", tag:"First Month Commission"},
+    {name:"Jack Whitfield", loc:"Canberra, ACT", from:"Call Centre Rep", to:"Senior Closer", quote:"Doubled my old salary within the first quarter.", amt:"$156,000", tag:"Annualised OTE"},
+    {name:"Isla Thompson", loc:"Hobart, TAS", from:"Graduate, No Exp.", to:"Remote Closer", quote:"No degree, no experience — just certified and hired.", amt:"$17,200", tag:"First Month Commission"},
+    {name:"Ryan Doyle", loc:"Newcastle, NSW", from:"Warehouse Worker", to:"Account Executive", quote:"Placement team found me a role in under three weeks.", amt:"$24,600", tag:"Best Single Month"},
+    {name:"Zoe Bennett", loc:"Geelong, VIC", from:"Retail Manager", to:"Senior Closer", quote:"Highest-earning quarter of my working life.", amt:"$174,500", tag:"Annualised OTE"},
+    {name:"Ethan Walsh", loc:"Sunshine Coast, QLD", from:"Fitness Coach", to:"Remote Closer", quote:"Coaches actually pick up the phone when you're stuck.", amt:"$20,100", tag:"First Month Commission"},
+    {name:"Grace Mitchell", loc:"Wollongong, NSW", from:"Office Junior", to:"Account Executive", quote:"Certified in four weeks, placed in two.", amt:"$29,300", tag:"Best Single Month"}
+  ];
+
+  function initials(name){
+    return name.split(' ').map(function(n){return n[0];}).join('').slice(0,2).toUpperCase();
+  }
+
+  function buildCard(w){
+    var card = document.createElement('div');
+    card.className = 'win-card';
+    card.innerHTML =
+      '<div class="win-top">'+
+        '<div class="win-avatar">'+initials(w.name)+'</div>'+
+        '<div><div class="win-name">'+w.name+'</div><div class="win-loc">'+w.loc+'</div></div>'+
+      '</div>'+
+      '<div class="win-path">'+w.from+'<svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="to">'+w.to+'</span></div>'+
+      '<p class="win-quote">&ldquo;'+w.quote+'&rdquo;</p>'+
+      '<div class="win-figure"><span class="amt">'+w.amt+'</span><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>'+w.tag+'</span></div>';
+    return card;
+  }
+
+  function fillTrack(trackEl, list, offset){
+    var ordered = list.slice(offset).concat(list.slice(0, offset));
+    var frag = document.createDocumentFragment();
+    ordered.concat(ordered).forEach(function(w){ frag.appendChild(buildCard(w)); });
+    trackEl.appendChild(frag);
+  }
+
+  fillTrack(document.getElementById('track1'), wins, 0);
+  fillTrack(document.getElementById('track2'), wins, 6);
+
+  /* ---------- Footer year ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>
