@@ -4,46 +4,67 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ascend — The Certification Standard for Remote High-Ticket Sales</title>
-<meta name="description" content="Ascend trains, certifies and places Australians into real remote high-ticket sales roles. Applications open now.">
+<meta name="description" content="Ascend Executive Group trains, certifies and places Australians into real remote high-ticket sales roles. Academy and Accelerator memberships open now.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="https://scripts.converteai.net/65f5f8e3-68b2-4543-a8b6-897f5c290697/players/6a59ba5615557f6ba82f4113/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="preload" href="https://cdn.converteai.net/65f5f8e3-68b2-4543-a8b6-897f5c290697/6a4ed07f8061554c680c71bd/main.m3u8" as="fetch">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://license.vturb.com">
 <style>
 /* ===================================================================
    ASCEND — TOKENS
 =================================================================== */
 :root{
-  --black:#050608;
-  --bg:#07080b;
-  --surface:#0d0f15;
-  --surface-2:#12141c;
-  --surface-3:#191c26;
-  --line:rgba(148,168,220,0.12);
-  --line-strong:rgba(158,180,230,0.22);
-  --white:#f5f6f8;
-  --grey-1:#a9adb8;
-  --grey-2:#7d818d;
-  --grey-3:#53565f;
-  --silver:#b7bbc2;
-  --silver-bright:#e2e4e8;
-  --silver-dim:rgba(183,187,194,0.14);
-  --silver-line:rgba(183,187,194,0.35);
+  /* dark constants */
+  --bg-dark:#07080b; --surface-dark:#0d0f15; --surface-2-dark:#12141c; --surface-3-dark:#191c26;
+  --line-dark:rgba(148,168,220,0.12); --line-strong-dark:rgba(158,180,230,0.22);
+  --white-dark:#f5f6f8; --grey-1-dark:#a9adb8; --grey-2-dark:#7d818d; --grey-3-dark:#53565f;
+  --silver-dark:#b7bbc2; --silver-bright-dark:#e2e4e8; --silver-line-dark:rgba(183,187,194,0.35); --silver-dim-dark:rgba(183,187,194,0.14);
 
-  --blue:#3d63f5;
-  --blue-bright:#7c9bff;
-  --blue-deep:#1f3aa8;
-  --blue-dim:rgba(61,99,245,0.14);
-  --blue-line:rgba(94,128,255,0.4);
-  --blue-glow:rgba(61,99,245,0.35);
+  /* light constants */
+  --bg-light:#ffffff; --surface-light:#f6f7f9; --surface-2-light:#eef0f4; --surface-3-light:#e3e6ed;
+  --line-light:rgba(15,20,40,0.11); --line-strong-light:rgba(15,20,40,0.19);
+  --white-light:#0b0d13; --grey-1-light:#535762; --grey-2-light:#767a86; --grey-3-light:#989ba5;
+  --silver-light:#5b6470; --silver-bright-light:#1c2230; --silver-line-light:rgba(30,40,60,0.3); --silver-dim-light:rgba(30,40,60,0.06);
+
+  /* dynamic (default = dark) */
+  --bg:var(--bg-dark); --surface:var(--surface-dark); --surface-2:var(--surface-2-dark); --surface-3:var(--surface-3-dark);
+  --line:var(--line-dark); --line-strong:var(--line-strong-dark);
+  --white:var(--white-dark); --grey-1:var(--grey-1-dark); --grey-2:var(--grey-2-dark); --grey-3:var(--grey-3-dark);
+  --silver:var(--silver-dark); --silver-bright:var(--silver-bright-dark); --silver-line:var(--silver-line-dark); --silver-dim:var(--silver-dim-dark);
+
+  --blue:#3d63f5; --blue-bright:#6d8dff; --blue-deep:#1f3aa8; --blue-dim:rgba(61,99,245,0.12); --blue-line:rgba(74,108,255,0.4); --blue-glow:rgba(61,99,245,0.35);
+  --green:#188a58; --green-bright:#26b876; --green-dim:rgba(24,138,88,0.12); --green-line:rgba(24,138,88,0.4);
+  --on-accent:#ffffff;
 
   --font-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --container:1280px;
   --gutter:clamp(24px, 5vw, 64px);
-  --section-y:clamp(72px, 11vw, 160px);
+  --section-y:clamp(64px, 10vw, 144px);
   --ease:cubic-bezier(.16,.84,.44,1);
   --radius:3px;
+}
+.light-zone{
+  --bg:var(--bg-light); --surface:var(--surface-light); --surface-2:var(--surface-2-light); --surface-3:var(--surface-3-light);
+  --line:var(--line-light); --line-strong:var(--line-strong-light);
+  --white:var(--white-light); --grey-1:var(--grey-1-light); --grey-2:var(--grey-2-light); --grey-3:var(--grey-3-light);
+  --silver:var(--silver-light); --silver-bright:var(--silver-bright-light); --silver-line:var(--silver-line-light); --silver-dim:var(--silver-dim-light);
+  background:var(--bg); color:var(--white);
+}
+.dark-island{
+  --bg:var(--bg-dark); --surface:var(--surface-dark); --surface-2:var(--surface-2-dark); --surface-3:var(--surface-3-dark);
+  --line:var(--line-dark); --line-strong:var(--line-strong-dark);
+  --white:var(--white-dark); --grey-1:var(--grey-1-dark); --grey-2:var(--grey-2-dark); --grey-3:var(--grey-3-dark);
+  --silver:var(--silver-dark); --silver-bright:var(--silver-bright-dark); --silver-line:var(--silver-line-dark); --silver-dim:var(--silver-dim-dark);
+  background:var(--bg); color:var(--white);
 }
 
 *,*::before,*::after{box-sizing:border-box;}
@@ -87,14 +108,14 @@ h1,h2,h3,h4,p{margin:0;}
 .section-glow--tr{
   top:-120px; right:-160px;
   width:560px; height:560px;
-  background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(61,99,245,.12) 0%, transparent 72%);
+  background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(61,99,245,.14) 0%, transparent 72%);
 }
 .section-glow--bl{
   bottom:-160px; left:-180px;
   width:600px; height:600px;
-  background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(61,99,245,.10) 0%, transparent 72%);
+  background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(61,99,245,.12) 0%, transparent 72%);
 }
-::selection{background:var(--silver-dim); color:var(--white);}
+::selection{background:var(--blue-dim); color:var(--white);}
 
 /* focus visibility */
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
@@ -111,11 +132,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-weight:600;
   letter-spacing:.22em;
   text-transform:uppercase;
-  color:var(--blue-bright);
+  color:var(--blue);
   display:flex;
   align-items:center;
   gap:10px;
 }
+.light-zone .eyebrow{color:var(--blue);}
 .eyebrow::before{
   content:"";
   width:6px;
@@ -138,8 +160,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-size:clamp(32px, 4.6vw, 56px);
   line-height:1.08;
   letter-spacing:-.01em;
-  max-width:14ch;
+  max-width:16ch;
   text-wrap:balance;
+  color:var(--white);
 }
 .section-desc{
   font-size:clamp(15px,1.4vw,17px);
@@ -157,7 +180,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   position:relative;
 }
 .section-alt{
-  background:linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+  background:var(--surface);
 }
 
 /* reveal-on-scroll */
@@ -191,7 +214,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .btn-primary{
   background:var(--blue);
-  color:var(--white);
+  color:var(--on-accent);
   border-color:var(--blue);
   box-shadow:0 8px 24px -8px var(--blue-glow);
 }
@@ -209,10 +232,34 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .btn-ghost:hover{
   border-color:var(--blue-line);
   background:var(--blue-dim);
-  color:var(--blue-bright);
+  color:var(--blue);
 }
 .btn-sm{padding:12px 22px; font-size:11.5px;}
+.btn-block{width:100%;}
 .btn svg{width:14px;height:14px;flex:none;}
+
+.badge-eyebrow{
+  justify-content:center;
+  border:1px solid var(--blue-line);
+  background:var(--blue-dim);
+  padding:8px 18px 8px 14px;
+  border-radius:999px;
+}
+.badge-eyebrow::before{box-shadow:0 0 10px 2px var(--blue-glow);}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  padding:6px 13px;
+  border-radius:999px;
+}
+.pill-blue{background:var(--blue); color:var(--on-accent);}
+.pill-outline{border:1px solid var(--line-strong); color:var(--grey-1);}
 
 /* ===================================================================
    NAV
@@ -221,55 +268,50 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   position:fixed;
   top:0; left:0; right:0;
   z-index:1000;
-  padding:22px 0;
+  padding:20px 0;
   transition:padding .4s var(--ease), background .4s var(--ease), border-color .4s var(--ease);
   border-bottom:1px solid transparent;
 }
 .nav.is-scrolled{
-  padding:14px 0;
-  background:rgba(7,8,11,.82);
+  padding:13px 0;
+  background:rgba(7,8,11,.86);
   backdrop-filter:blur(16px) saturate(140%);
   -webkit-backdrop-filter:blur(16px) saturate(140%);
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid var(--line-dark);
   box-shadow:0 1px 0 0 rgba(61,99,245,.15), 0 20px 40px -20px rgba(0,0,0,.6);
 }
 .nav-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:24px;
+  gap:20px;
 }
 .logo{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:9px;
   font-family:var(--font-display);
-  font-size:23px;
+  font-size:22px;
   letter-spacing:.06em;
   font-weight:600;
   flex:none;
+  color:var(--white-dark);
 }
-.logo-mark{
-  width:9px;height:9px;
-  background:var(--blue);
-  box-shadow:0 0 12px 1px var(--blue-glow);
-  transform:rotate(45deg);
-  flex:none;
-}
+.logo-mark{width:20px;height:19px;flex:none;color:var(--blue);}
 .nav-links{
   display:flex;
   align-items:center;
-  gap:clamp(20px,2.6vw,40px);
+  gap:clamp(16px,2.1vw,32px);
   position:absolute;
   left:50%;
   transform:translateX(-50%);
 }
 .nav-links a{
-  font-size:12px;
+  font-size:11.5px;
   font-weight:500;
-  letter-spacing:.1em;
+  letter-spacing:.09em;
   text-transform:uppercase;
-  color:var(--grey-1);
+  color:var(--grey-1-dark);
   position:relative;
   padding:4px 0;
   transition:color .3s var(--ease);
@@ -284,18 +326,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   box-shadow:0 0 8px var(--blue-glow);
   transition:right .35s var(--ease);
 }
-.nav-links a:hover{color:var(--white);}
+.nav-links a:hover{color:var(--white-dark);}
 .nav-links a:hover::after{right:0;}
 .nav-cta{flex:none;}
 .nav-burger{
   display:none;
   flex:none;
   width:36px;height:36px;
-  border:1px solid var(--line-strong);
+  border:1px solid var(--line-strong-dark);
   align-items:center;
   justify-content:center;
   background:transparent;
-  color:var(--white);
+  color:var(--white-dark);
 }
 .nav-burger svg{width:16px;height:16px;}
 
@@ -303,13 +345,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   position:fixed;
   inset:0;
   z-index:999;
-  background:rgba(6,6,7,.98);
+  background:rgba(6,6,8,.98);
   backdrop-filter:blur(10px);
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:32px;
+  gap:26px;
   opacity:0;
   pointer-events:none;
   transition:opacity .4s var(--ease);
@@ -317,17 +359,17 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .mobile-panel.is-open{opacity:1; pointer-events:auto;}
 .mobile-panel a{
   font-family:var(--font-display);
-  font-size:30px;
+  font-size:27px;
   font-weight:500;
-  color:var(--white);
+  color:var(--white-dark);
 }
-.mobile-panel .btn{margin-top:16px;}
+.mobile-panel .btn{margin-top:14px;}
 
 /* ===================================================================
    HERO / VSL
 =================================================================== */
 .hero{
-  padding:clamp(140px,20vw,196px) 0 var(--section-y);
+  padding:clamp(126px,18vw,180px) 0 var(--section-y);
   position:relative;
   overflow:hidden;
 }
@@ -359,22 +401,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   flex-direction:column;
   align-items:center;
   text-align:center;
-  gap:26px;
-  margin-bottom:clamp(48px,7vw,88px);
+  gap:24px;
+  margin-bottom:clamp(44px,6vw,72px);
 }
-.badge-eyebrow{
-  justify-content:center;
-  border:1px solid var(--blue-line);
-  background:var(--blue-dim);
-  padding:8px 18px 8px 14px;
-  border-radius:999px;
-}
-.badge-eyebrow::before{box-shadow:0 0 10px 2px var(--blue-glow);}
 .hero-title{
   font-family:var(--font-display);
   font-weight:500;
-  font-size:clamp(40px, 6.4vw, 92px);
-  line-height:1.03;
+  font-size:clamp(38px, 6vw, 84px);
+  line-height:1.04;
   letter-spacing:-.015em;
   max-width:17ch;
   text-wrap:balance;
@@ -388,7 +422,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .hero-sub{
   font-size:clamp(15px,1.5vw,18px);
   color:var(--grey-1);
-  max-width:46ch;
+  max-width:48ch;
   font-weight:400;
 }
 .hero-actions{
@@ -396,14 +430,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   gap:16px;
   flex-wrap:wrap;
   justify-content:center;
-  margin-top:6px;
+  margin-top:4px;
 }
 .hero-meta{
   display:flex;
   gap:28px;
   flex-wrap:wrap;
   justify-content:center;
-  margin-top:20px;
+  margin-top:18px;
   font-size:12px;
   letter-spacing:.08em;
   text-transform:uppercase;
@@ -446,78 +480,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .vsl-corner.tr{top:-1px;right:-1px; transform:scaleX(-1);}
 .vsl-corner.bl{bottom:-1px;left:-1px; transform:scaleY(-1);}
 .vsl-corner.br{bottom:-1px;right:-1px; transform:scale(-1,-1);}
-.vsl-screen{
+.vsl-player-wrap{
   position:relative;
   aspect-ratio:16/9;
-  background:
-    radial-gradient(ellipse at center, rgba(255,255,255,.05) 0%, transparent 60%),
-    #0c0c0e;
+  background:#0a0b0e;
   border:1px solid var(--line);
   overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.vsl-screen::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:repeating-linear-gradient(180deg, rgba(255,255,255,.02) 0px, rgba(255,255,255,.02) 1px, transparent 1px, transparent 3px);
-  pointer-events:none;
-}
-.vsl-play{
-  position:relative;
-  z-index:2;
-  width:78px;height:78px;
-  border-radius:50%;
-  border:1px solid var(--blue-line);
-  background:rgba(61,99,245,.1);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:all .4s var(--ease);
-  backdrop-filter:blur(4px);
-}
-.vsl-play::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  border-radius:50%;
-  border:1px solid var(--blue-line);
-  opacity:0;
-  transform:scale(1);
-  transition:all .8s var(--ease);
-}
-.vsl-screen:hover .vsl-play{
-  background:var(--blue);
-  border-color:var(--blue-bright);
-  transform:scale(1.06);
-  box-shadow:0 0 40px var(--blue-glow);
-}
-.vsl-screen:hover .vsl-play::before{opacity:1; transform:scale(1.35); border-color:var(--blue-bright);}
-.vsl-screen:hover .vsl-play svg{fill:var(--white);}
-.vsl-play svg{width:20px;height:20px;fill:var(--white); margin-left:3px; transition:fill .3s var(--ease);}
-.vsl-caption-row{
-  position:absolute;
-  bottom:24px;left:32px;right:32px;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  z-index:2;
-  font-size:11px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--grey-1);
-  pointer-events:none;
-}
-.vsl-caption-row .dur{font-variant-numeric:tabular-nums;}
-.vsl-watermark{
-  position:absolute; top:24px; left:32px;
-  font-family:var(--font-display);
-  font-size:15px;
-  letter-spacing:.08em;
-  color:var(--grey-2);
-  z-index:2;
 }
 .vsl-below{
   display:flex;
@@ -536,7 +504,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
 /* Calendly section (below hero) */
 .booking-panel{
-  max-width:960px;
+  max-width:820px;
   margin:clamp(56px,8vw,96px) auto 0;
 }
 .booking-head{
@@ -559,46 +527,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   padding:1px;
   transition:box-shadow .5s var(--ease), border-color .5s var(--ease);
 }
-.calendly-frame:hover{
-  border-color:var(--blue-line);
-  box-shadow:0 0 60px -20px var(--blue-glow);
-}
-.calendly-inner{
-  min-height:480px;
-  border:1px solid var(--line);
-  background:
-    repeating-linear-gradient(135deg, rgba(94,128,255,.03) 0px, rgba(94,128,255,.03) 1px, transparent 1px, transparent 14px),
-    var(--bg);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
-  text-align:center;
-  padding:40px;
-}
-.calendly-icon{
-  width:48px;height:48px;
-  border:1px solid var(--blue-line);
-  background:var(--blue-dim);
-  display:flex;align-items:center;justify-content:center;
-  border-radius:50%;
-}
-.calendly-icon svg{width:20px;height:20px;stroke:var(--blue-bright);}
-.calendly-inner h4{
-  font-family:var(--font-body);
-  font-weight:600;
-  font-size:13px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--grey-1);
-}
-.calendly-inner p{
-  font-size:12.5px;
-  color:var(--grey-3);
-  max-width:38ch;
-  font-family:'SFMono-Regular', ui-monospace, monospace;
-}
+.calendly-frame:hover{border-color:var(--blue-line); box-shadow:0 0 60px -20px var(--blue-glow);}
+.calendly-inline-widget{min-height:660px;}
 
 /* ===================================================================
    STATEMENT SECTION
@@ -665,7 +595,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   border:1px solid var(--line);
-  background:var(--surface);
+  background:var(--bg);
   position:relative;
 }
 .stat-cell{
@@ -683,7 +613,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   top:-1px; left:0; right:0;
   height:2px;
   background:linear-gradient(90deg, transparent, var(--blue), transparent);
-  opacity:.7;
+  opacity:.8;
 }
 .stat-cell:last-child{border-right:none;}
 .stat-num{
@@ -694,13 +624,68 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-variant-numeric:tabular-nums;
   color:var(--white);
 }
-.stat-num .unit{color:var(--blue-bright); font-size:.55em; vertical-align:.35em; font-family:var(--font-body); font-weight:600;}
+.stat-num .unit{color:var(--blue); font-size:.55em; vertical-align:.35em; font-family:var(--font-body); font-weight:600;}
 .stat-label{
   font-size:11px;
   letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--grey-2);
 }
+
+/* ===================================================================
+   HIGH-TICKET EXPLAINER
+=================================================================== */
+.explainer-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:clamp(40px,6vw,80px);
+  align-items:start;
+}
+.explainer-copy{display:flex; flex-direction:column; gap:20px;}
+.explainer-copy p{font-size:15px; color:var(--grey-1); line-height:1.75;}
+.explainer-copy p strong{color:var(--white); font-weight:600;}
+.explainer-chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;}
+.chip{
+  border:1px solid var(--line-strong);
+  padding:8px 16px;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--grey-1);
+  display:flex; align-items:center; gap:8px;
+}
+.chip::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue);}
+.model-card{
+  border:1px solid var(--line);
+  background:var(--surface);
+  padding:28px;
+}
+.model-card h4{
+  font-family:var(--font-display);
+  font-size:19px;
+  font-weight:500;
+  margin-bottom:22px;
+}
+.model-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  padding:16px 0;
+  border-top:1px solid var(--line);
+}
+.model-row:first-of-type{border-top:none; padding-top:0;}
+.model-row .k{
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--blue);
+  flex:none;
+  width:90px;
+  padding-top:2px;
+}
+.model-row .v{font-size:13.5px; color:var(--white); line-height:1.55;}
+.model-row .v span{color:var(--grey-2); font-size:12.5px;}
 
 /* ===================================================================
    WHY SALES — FEATURE CARDS
@@ -743,7 +728,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .feature-card:hover .feature-icon{border-color:var(--blue-line); box-shadow:0 0 20px -4px var(--blue-glow);}
 .feature-icon svg{width:19px;height:19px;stroke:var(--silver); fill:none; transition:stroke .4s var(--ease);}
-.feature-card:hover .feature-icon svg{stroke:var(--blue-bright);}
+.feature-card:hover .feature-icon svg{stroke:var(--blue);}
 .feature-index{
   font-family:var(--font-display);
   font-size:13px;
@@ -760,6 +745,51 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   color:var(--grey-1);
   line-height:1.65;
 }
+
+/* ===================================================================
+   PACKAGES
+=================================================================== */
+.packages-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:stretch;
+}
+.package-card{
+  border:1px solid var(--line-strong);
+  background:var(--bg);
+  padding:clamp(32px,3.4vw,44px);
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  position:relative;
+}
+.package-card.is-featured{
+  border-color:var(--blue-line);
+  box-shadow:0 30px 80px -30px var(--blue-glow), inset 0 0 0 1px var(--blue-line);
+}
+.package-head{display:flex; flex-direction:column; gap:10px;}
+.package-name{font-family:var(--font-display); font-size:clamp(28px,3vw,36px); font-weight:500;}
+.package-tag{font-size:13.5px; color:var(--grey-1);}
+.package-price{
+  font-size:12px;
+  letter-spacing:.06em;
+  color:var(--grey-2);
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+.package-list{display:flex; flex-direction:column; gap:13px; flex:1;}
+.package-list li{
+  display:flex;
+  gap:11px;
+  align-items:flex-start;
+  font-size:13.6px;
+  color:var(--grey-1);
+  line-height:1.5;
+}
+.package-list li strong{color:var(--white); font-weight:600;}
+.package-list svg{width:14px;height:14px;stroke:var(--blue); flex:none; margin-top:3px;}
+.package-list.is-plus li svg{stroke:var(--blue);}
 
 /* ===================================================================
    RESULTS MARQUEE
@@ -800,8 +830,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   flex-direction:column;
   gap:16px;
   transition:border-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
+  box-shadow:0 20px 50px -30px rgba(0,0,0,.6);
 }
-.win-card:hover{border-color:var(--line-strong); border-top-color:var(--blue-bright); transform:translateY(-4px); box-shadow:0 20px 40px -20px var(--blue-glow);}
+.win-card:hover{border-color:var(--line-strong); border-top-color:var(--blue-bright); transform:translateY(-4px); box-shadow:0 26px 50px -20px var(--blue-glow);}
 .win-top{display:flex; align-items:center; gap:12px;}
 .win-avatar{
   width:38px;height:38px;
@@ -827,7 +858,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .win-path svg{width:11px;height:11px;stroke:var(--grey-3); flex:none;}
 .win-path .to{color:var(--blue-bright); font-weight:500;}
 .win-quote{
-  font-size:13.5px;
   color:var(--grey-1);
   line-height:1.6;
   font-style:italic;
@@ -844,6 +874,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .win-figure .amt{font-family:var(--font-display); font-size:21px; color:var(--white);}
 .win-figure .tag{font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--grey-3); display:flex; align-items:center; gap:5px;}
 .win-figure .tag svg{width:10px;height:10px;stroke:var(--blue-bright);}
+.results-note{font-size:12px; color:var(--grey-2); text-align:center; margin-top:36px; max-width:60ch; margin-left:auto; margin-right:auto;}
 
 /* ===================================================================
    HOW IT WORKS — STEPPER
@@ -884,7 +915,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   color:var(--grey-3);
   transition:color .4s var(--ease);
 }
-.step-tab.is-active .step-num{color:var(--blue-bright);}
+.step-tab.is-active .step-num{color:var(--blue);}
 .step-tab .step-name{
   font-family:var(--font-display);
   font-size:clamp(22px,2.4vw,30px);
@@ -925,7 +956,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-size:13.8px;
   color:var(--grey-1);
 }
-.step-checklist svg{width:14px;height:14px;stroke:var(--blue-bright); flex:none; margin-top:2px;}
+.step-checklist svg{width:14px;height:14px;stroke:var(--blue); flex:none; margin-top:2px;}
 .step-meta-card{
   border:1px solid var(--line);
   border-left:2px solid var(--blue-line);
@@ -944,7 +975,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .step-meta-row:last-child{border-bottom:none; padding-bottom:0;}
 .step-meta-row .k{color:var(--grey-2); letter-spacing:.06em; text-transform:uppercase; font-size:11px;}
-.step-meta-row .v{color:var(--blue-bright); font-weight:600; font-family:var(--font-display); font-size:17px;}
+.step-meta-row .v{color:var(--blue); font-weight:600; font-family:var(--font-display); font-size:17px;}
 
 /* ===================================================================
    PLATFORM — TABS
@@ -1006,7 +1037,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   padding:6px 12px;
   transition:border-color .3s var(--ease), color .3s var(--ease);
 }
-.ptag:hover{border-color:var(--blue-line); color:var(--blue-bright);}
+.ptag:hover{border-color:var(--blue-line); color:var(--blue);}
 .platform-shot{
   padding:clamp(24px,3vw,40px);
   display:flex;
@@ -1016,11 +1047,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .mock-window{
   width:100%;
   border:1px solid var(--line-strong);
-  background:#0c0c0e;
-  aspect-ratio:16/10.5;
+  aspect-ratio:16/11;
   display:flex;
   flex-direction:column;
   box-shadow:0 30px 70px -20px rgba(0,0,0,.7);
+  overflow:hidden;
 }
 .mock-bar{
   display:flex;
@@ -1038,55 +1069,130 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   letter-spacing:.04em;
   font-family:ui-monospace, monospace;
 }
-.mock-body{
-  flex:1;
-  display:grid;
-  grid-template-columns:70px 1fr;
-  min-height:0;
+.mock-body{flex:1; min-height:0; overflow:hidden;}
+
+/* cert portal mock */
+.mock-cert{padding:20px; display:flex; flex-direction:column; gap:14px; height:100%; overflow:hidden;}
+.mock-toggle{display:flex; gap:8px;}
+.mock-toggle span{font-size:10.5px; padding:7px 14px; border-radius:999px; border:1px solid var(--line-strong); color:var(--grey-2);}
+.mock-toggle span.active{background:var(--blue); border-color:var(--blue); color:#fff;}
+.mock-ring-row{display:flex; align-items:center; gap:16px; border:1px solid var(--line); padding:14px; background:var(--surface-2);}
+.mock-ring{
+  width:52px;height:52px;border-radius:50%; flex:none;
+  background:conic-gradient(var(--blue) 360deg, var(--surface-3) 0);
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
 }
-.mock-side{
-  border-right:1px solid var(--line);
-  padding:16px 10px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-.mock-side i{height:6px; background:var(--surface-3); border-radius:1px;}
-.mock-side i:nth-child(1){width:70%;}
-.mock-side i:nth-child(2){width:50%;}
-.mock-side i:nth-child(3){width:60%;}
-.mock-side i:nth-child(4){width:40%;}
-.mock-main{padding:18px; display:flex; flex-direction:column; gap:12px;}
-.mock-row{display:flex; gap:12px;}
-.mock-block{background:var(--surface-2); border:1px solid var(--line); flex:1; min-height:34px;}
-.mock-block.tall{min-height:90px;}
-.mock-block.accent{border-color:var(--blue-line); background:var(--blue-dim); box-shadow:inset 0 0 24px -6px var(--blue-glow);}
-.mock-watermark{
-  position:absolute;
-  font-family:var(--font-display);
-  font-style:italic;
-  color:var(--grey-3);
-  font-size:11px;
-  align-self:flex-end;
-  margin-top:auto;
-}
+.mock-ring::before{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--surface-2);}
+.mock-ring span{position:relative; font-size:10.5px; font-weight:700; color:var(--white);}
+.mock-ring-copy .t1{font-size:12px; font-weight:600; color:var(--white);}
+.mock-ring-copy .t2{font-size:10.5px; color:var(--grey-2); margin-top:2px;}
+.mock-level{display:flex; flex-direction:column; gap:6px; padding:10px 12px; border:1px solid var(--line); background:var(--surface-2);}
+.mock-level-top{display:flex; justify-content:space-between; font-size:10px; color:var(--grey-2); letter-spacing:.04em;}
+.mock-level-name{font-size:12px; font-weight:600; color:var(--white);}
+.mock-level-bar{height:4px; background:var(--surface-3); overflow:hidden;}
+.mock-level-bar i{display:block; height:100%; background:var(--green-bright);}
+
+/* dashboard mock */
+.mock-dash{padding:18px; display:flex; flex-direction:column; gap:12px; height:100%; overflow:hidden;}
+.mock-dash-hero{border:1px solid var(--line); background:var(--surface-2); padding:16px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px;}
+.mock-dash-hero .ic{width:30px;height:30px;border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center;}
+.mock-dash-hero .ic svg{width:14px;height:14px;stroke:var(--blue);}
+.mock-dash-hero .t1{font-size:12.5px; font-weight:600; color:var(--white);}
+.mock-dash-hero .t2{font-size:10px; color:var(--grey-2);}
+.mock-tiles{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+.mock-tile{border:1px solid var(--line); background:var(--surface-2); padding:12px; display:flex; flex-direction:column; gap:8px;}
+.mock-tile .ic{width:22px;height:22px; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center;}
+.mock-tile .ic svg{width:11px;height:11px; stroke:var(--blue);}
+.mock-tile .t1{font-size:11px; font-weight:600; color:var(--white);}
+.mock-tile .t2{font-size:9.5px; color:var(--grey-2); line-height:1.4;}
+
+/* community mock */
+.mock-community{padding:16px; display:flex; flex-direction:column; gap:10px; height:100%; overflow:hidden;}
+.mock-ctabs{display:flex; gap:14px; border-bottom:1px solid var(--line); padding-bottom:8px; font-size:10px; color:var(--grey-2); letter-spacing:.03em;}
+.mock-ctabs span.active{color:var(--white); border-bottom:2px solid var(--blue); padding-bottom:8px; margin-bottom:-9px;}
+.mock-post{border:1px solid var(--line); background:var(--surface-2); padding:12px; display:flex; flex-direction:column; gap:8px;}
+.mock-post-top{display:flex; align-items:center; gap:8px;}
+.mock-post-avatar{width:22px;height:22px; border-radius:50%; background:var(--blue-dim); border:1px solid var(--blue-line); flex:none;}
+.mock-post-name{font-size:10.5px; font-weight:600; color:var(--white);}
+.mock-post-meta{font-size:9px; color:var(--grey-3);}
+.mock-post-line{height:6px; background:var(--surface-3); width:100%;}
+.mock-post-line.short{width:60%;}
+.mock-post-foot{display:flex; gap:12px; font-size:9.5px; color:var(--grey-2);}
+
+/* roleplay mock */
+.mock-rp{display:grid; grid-template-columns:80px 1fr; height:100%; overflow:hidden;}
+.mock-rp-side{border-right:1px solid var(--line); padding:12px 8px; display:flex; flex-direction:column; gap:6px;}
+.mock-rp-side i{display:block; height:6px; background:var(--surface-3);}
+.mock-rp-side i:nth-child(1){width:75%;}
+.mock-rp-side i:nth-child(2){width:55%;}
+.mock-rp-side i.on{background:var(--blue-dim); border:1px solid var(--blue-line); height:16px;}
+.mock-rp-main{padding:14px; display:flex; flex-direction:column; gap:10px; overflow:hidden;}
+.mock-rp-bubble{border:1px solid var(--blue-line); background:var(--blue-dim); padding:12px; font-size:9.5px; color:var(--grey-1); line-height:1.6;}
+.mock-rp-bubble .h{font-size:10px; font-weight:700; color:var(--blue-bright); margin-bottom:6px; letter-spacing:.03em;}
+.mock-rp-bubble .row{display:flex; justify-content:space-between; margin-top:4px;}
+.mock-rp-line{height:6px; background:var(--surface-3); width:80%;}
+
+/* calls mock */
+.mock-calls{padding:18px; display:flex; flex-direction:column; gap:12px; height:100%; overflow:hidden;}
+.mock-call-card{border:1px solid var(--line); background:var(--surface-2); padding:14px; display:flex; justify-content:space-between; align-items:center; gap:10px;}
+.mock-call-left{display:flex; flex-direction:column; gap:4px;}
+.mock-call-left .t1{font-size:11.5px; font-weight:600; color:var(--white);}
+.mock-call-left .t2{font-size:9.5px; color:var(--grey-2);}
+.mock-call-btn{font-size:9px; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--blue-line); color:var(--blue-bright); padding:6px 10px; flex:none;}
+.mock-call-avatars{display:flex;}
+.mock-call-avatars i{width:20px;height:20px;border-radius:50%;background:var(--blue-dim); border:1px solid var(--blue-line); margin-left:-6px;}
+.mock-call-avatars i:first-child{margin-left:0;}
 
 /* ===================================================================
-   TEAM
+   TEAM / FOUNDERS
 =================================================================== */
+.founders-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.founder-card{
+  background:var(--bg);
+  padding:clamp(32px,3.4vw,44px);
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:24px;
+}
+.founder-photo{
+  width:160px; height:190px;
+  border:1px solid var(--line-strong);
+  background:linear-gradient(160deg, var(--surface-2) 0%, var(--surface) 100%);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden;
+}
+.founder-photo::after{
+  content:"";
+  position:absolute; inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:16px 16px;
+}
+.founder-initials{font-family:var(--font-display); font-size:38px; color:var(--grey-3); position:relative; z-index:1;}
+.founder-body{display:flex; flex-direction:column; gap:12px;}
+.founder-name{font-family:var(--font-display); font-size:26px; font-weight:500;}
+.founder-title{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--blue);}
+.founder-bio{font-size:13.4px; color:var(--grey-1); line-height:1.65;}
+
 .team-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(5,1fr);
   gap:1px;
   background:var(--line);
   border:1px solid var(--line);
 }
 .coach-card{
   background:var(--bg);
-  padding:clamp(28px,3vw,34px) clamp(22px,2.4vw,28px);
+  padding:clamp(24px,2.4vw,28px) clamp(18px,2vw,22px);
   display:flex;
   flex-direction:column;
-  gap:20px;
+  gap:18px;
   transition:background .4s var(--ease);
 }
 .coach-card:hover{background:var(--surface);}
@@ -1094,8 +1200,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   width:100%;
   aspect-ratio:4/5;
   border:1px solid var(--line-strong);
-  background:
-    linear-gradient(160deg, var(--surface-2) 0%, var(--surface) 100%);
+  background:linear-gradient(160deg, var(--surface-2) 0%, var(--surface) 100%);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -1113,18 +1218,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .coach-initials{
   font-family:var(--font-display);
-  font-size:44px;
+  font-size:36px;
   color:var(--grey-3);
   position:relative;
   z-index:1;
   letter-spacing:.04em;
 }
-.coach-name{font-family:var(--font-display); font-size:22px; font-weight:500;}
-.coach-title{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--blue-bright); margin-top:-12px;}
-.coach-bio{font-size:13.2px; color:var(--grey-1); line-height:1.65;}
-.coach-accolades{display:flex; flex-direction:column; gap:8px; margin-top:4px; padding-top:16px; border-top:1px solid var(--line);}
-.coach-accolades li{display:flex; gap:8px; align-items:center; font-size:11.5px; color:var(--grey-2);}
-.coach-accolades svg{width:11px;height:11px; stroke:var(--blue-bright); flex:none;}
+.coach-name{font-family:var(--font-display); font-size:20px; font-weight:500;}
+.coach-title{font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); margin-top:-10px;}
+.coach-bio{font-size:12.6px; color:var(--grey-1); line-height:1.6;}
+.coach-accolades{display:flex; flex-direction:column; gap:7px; margin-top:2px; padding-top:14px; border-top:1px solid var(--line);}
+.coach-accolades li{display:flex; gap:7px; align-items:flex-start; font-size:11px; color:var(--grey-2); line-height:1.5;}
+.coach-accolades svg{width:11px;height:11px; stroke:var(--blue); flex:none; margin-top:2px;}
 
 /* ===================================================================
    FINAL BOOKING
@@ -1152,7 +1257,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   transition:box-shadow .5s var(--ease), border-color .5s var(--ease);
 }
 .final-calendly:hover{border-color:var(--blue-line); box-shadow:0 0 60px -20px var(--blue-glow);}
-.final-calendly .calendly-inner{min-height:400px;}
+.final-calendly .calendly-inline-widget{min-height:560px;}
 .apply-card{
   border:1px solid var(--line);
   background:var(--surface);
@@ -1169,11 +1274,27 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .apply-list li span{color:var(--blue-bright); font-family:var(--font-display); font-style:italic;}
 
 /* ===================================================================
+   DISCLAIMER
+=================================================================== */
+.disclaimer{
+  padding:clamp(40px,5vw,64px) 0;
+  border-top:1px solid var(--line-dark);
+  background:var(--bg-dark);
+}
+.disclaimer-inner{display:flex; flex-direction:column; gap:14px; max-width:900px;}
+.disclaimer-inner h5{
+  font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--grey-2-dark);
+}
+.disclaimer-inner p{font-size:12.5px; color:var(--grey-2-dark); line-height:1.75;}
+.disclaimer-inner p strong{color:var(--grey-1-dark);}
+
+/* ===================================================================
    FOOTER
 =================================================================== */
 .footer{
-  border-top:1px solid var(--line);
-  padding:clamp(56px,7vw,88px) 0 32px;
+  border-top:1px solid var(--line-dark);
+  padding:clamp(48px,6vw,72px) 0 32px;
+  background:var(--bg-dark);
 }
 .footer-top{
   display:grid;
@@ -1182,11 +1303,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   padding-bottom:clamp(40px,6vw,64px);
 }
 .footer-brand{display:flex; flex-direction:column; gap:18px; max-width:34ch;}
-.footer-brand p{font-size:13px; color:var(--grey-2); line-height:1.7;}
+.footer-brand p{font-size:13px; color:var(--grey-2-dark); line-height:1.7;}
 .footer-social{display:flex; gap:12px; margin-top:6px;}
 .footer-social a{
   width:34px;height:34px;
-  border:1px solid var(--line-strong);
+  border:1px solid var(--line-strong-dark);
   display:flex; align-items:center; justify-content:center;
   transition:border-color .3s var(--ease), color .3s var(--ease);
 }
@@ -1196,40 +1317,48 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-size:11px;
   letter-spacing:.12em;
   text-transform:uppercase;
-  color:var(--grey-2);
+  color:var(--grey-2-dark);
   margin-bottom:18px;
 }
 .footer-col ul{display:flex; flex-direction:column; gap:12px;}
-.footer-col a{font-size:13.5px; color:var(--grey-1); transition:color .3s var(--ease);}
-.footer-col a:hover{color:var(--white);}
+.footer-col a{font-size:13.5px; color:var(--grey-1-dark); transition:color .3s var(--ease);}
+.footer-col a:hover{color:var(--white-dark);}
 .footer-bottom{
   padding-top:28px;
-  border-top:1px solid var(--line);
+  border-top:1px solid var(--line-dark);
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:16px;
   flex-wrap:wrap;
   font-size:11.5px;
-  color:var(--grey-3);
+  color:var(--grey-3-dark);
   letter-spacing:.03em;
 }
-.footer-bottom a{color:var(--grey-3);}
-.footer-bottom a:hover{color:var(--grey-1);}
+.footer-bottom a{color:var(--grey-3-dark);}
+.footer-bottom a:hover{color:var(--grey-1-dark);}
 
 /* ===================================================================
    RESPONSIVE
 =================================================================== */
+@media (max-width:1100px){
+  .team-grid{grid-template-columns:repeat(3,1fr);}
+}
 @media (max-width:1024px){
   .nav-links{display:none;}
   .nav-burger{display:flex;}
   .features-grid{grid-template-columns:repeat(2,1fr);}
-  .team-grid{grid-template-columns:repeat(2,1fr);}
   .final-grid{grid-template-columns:1fr;}
   .platform-body.is-active{grid-template-columns:1fr;}
   .platform-copy{border-right:none; border-bottom:1px solid var(--line);}
   .step-panel.is-active{grid-template-columns:1fr; gap:32px;}
   .footer-top{grid-template-columns:1fr 1fr;}
+  .explainer-grid{grid-template-columns:1fr;}
+  .packages-grid{grid-template-columns:1fr;}
+  .founders-grid{grid-template-columns:1fr;}
+}
+@media (max-width:820px){
+  .team-grid{grid-template-columns:repeat(2,1fr);}
 }
 @media (max-width:720px){
   .stats-bar{grid-template-columns:1fr;}
@@ -1239,13 +1368,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   .step-tab{padding:18px 0;}
   .footer-top{grid-template-columns:1fr;}
   .win-card{width:260px;}
+  .founder-card{grid-template-columns:1fr; text-align:left;}
+  .founder-photo{width:120px; height:150px;}
 }
 @media (max-width:600px){
   .features-grid{grid-template-columns:1fr;}
   .team-grid{grid-template-columns:1fr;}
   .hero-meta{gap:16px; flex-direction:column; align-items:center;}
-  .vsl-caption-row{left:16px; right:16px; bottom:14px; flex-direction:column; align-items:flex-start; gap:4px;}
-  .vsl-watermark{top:14px; left:16px; font-size:12px;}
   .btn{padding:15px 24px;}
   .hero-actions{flex-direction:column; width:100%;}
   .hero-actions .btn{width:100%;}
@@ -1259,12 +1388,19 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 =============================================================== -->
 <nav class="nav" id="nav">
   <div class="container nav-inner">
-    <a href="#top" class="logo"><span class="logo-mark"></span>ASCEND</a>
+    <a href="#top" class="logo">
+      <svg class="logo-mark" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 2 L42 38 H32.5 L22 18.5 L11.5 38 H2 L22 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M22 15 L34 38 H27.5 L22 27.5 L16.5 38 H10 L22 15Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity="0.55"/>
+      </svg>
+      ASCEND
+    </a>
     <div class="nav-links">
       <a href="#program">Program</a>
-      <a href="#results">Results</a>
+      <a href="#packages">Packages</a>
       <a href="#process">Process</a>
       <a href="#platform">Platform</a>
+      <a href="#results">Results</a>
       <a href="#team">Team</a>
     </div>
     <a href="#book" class="btn btn-primary btn-sm nav-cta">Book a Call</a>
@@ -1276,9 +1412,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
 <div class="mobile-panel" id="mobilePanel">
   <a href="#program">Program</a>
-  <a href="#results">Results</a>
+  <a href="#packages">Packages</a>
   <a href="#process">Process</a>
   <a href="#platform">Platform</a>
+  <a href="#results">Results</a>
   <a href="#team">Team</a>
   <a href="#book" class="btn btn-primary">Book a Call</a>
 </div>
@@ -1291,17 +1428,17 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="container hero-inner">
     <div class="hero-top reveal is-visible">
-      <div class="eyebrow badge-eyebrow">Est. Remote Sales Certification · Australia</div>
+      <div class="eyebrow badge-eyebrow">Ascend Executive Group · Australia</div>
       <h1 class="hero-title">The Certification Standard for<br><em>Remote High-Ticket Sales.</em></h1>
-      <p class="hero-sub">We train, certify and place ambitious 18–30 year olds into real closing roles with real companies — no cold outreach required to get started, no fluff, no guesswork.</p>
+      <p class="hero-sub">Watch the video below to see exactly how Ascend trains, certifies and places members into real remote sales roles — no experience required.</p>
       <div class="hero-actions">
-        <a href="#book" class="btn btn-primary">Book Your Application Call</a>
-        <a href="#process" class="btn btn-ghost">See How It Works</a>
+        <a href="#book" class="btn btn-primary">Book Your Strategy Call</a>
+        <a href="#packages" class="btn btn-ghost">See The Packages</a>
       </div>
       <div class="hero-meta">
         <span><i></i>200+ Members Certified</span>
         <span><i></i>21-Day Avg. Placement</span>
-        <span><i></i>Applications Open Now</span>
+        <span><i></i>Academy &amp; Accelerator Open Now</span>
       </div>
     </div>
 
@@ -1311,37 +1448,25 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         <div class="vsl-corner tr"></div>
         <div class="vsl-corner bl"></div>
         <div class="vsl-corner br"></div>
-        <div class="vsl-screen" id="vslScreen" role="button" tabindex="0" aria-label="Play the Ascend introduction video">
-          <div class="vsl-watermark">ASCEND — 001</div>
-          <button class="vsl-play" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"/></svg>
-          </button>
-          <div class="vsl-caption-row">
-            <span>The Ascend Method — How Certification Works</span>
-            <span class="dur">04:12</span>
-          </div>
+        <div class="vsl-player-wrap">
+          <vturb-smartplayer id="vid-6a4ed07f8061554c680c71bd" style="display:block;margin:0 auto;width:100%;height:100%;"></vturb-smartplayer>
         </div>
       </div>
+      <script type="text/javascript" src="https://scripts.converteai.net/65f5f8e3-68b2-4543-a8b6-897f5c290697/players/6a59ba5615557f6ba82f4113/v4/player.js" async></script>
       <div class="vsl-below">
-        <span class="rec"><i></i>Placeholder video — replace source in &lt;video&gt; / embed</span>
-        <span>1080p · No sound autoplay</span>
+        <span class="rec"><i></i>Watch this before you book</span>
+        <span>The full breakdown — training, certification, placement</span>
       </div>
     </div>
 
     <div class="booking-panel reveal" id="book">
       <div class="booking-head">
         <div class="eyebrow badge-eyebrow">Admissions</div>
-        <h2 class="booking-title">Book a 15-Minute Call With Our Team</h2>
-        <p class="booking-sub">We'll assess your fit for the next certification intake and walk you through timelines, cost and placement pathways.</p>
+        <h2 class="booking-title">Book a Strategy Call With Our Team</h2>
+        <p class="booking-sub">We'll assess your fit for the next intake and walk you through Academy vs Accelerator, timelines and placement pathways.</p>
       </div>
       <div class="calendly-frame">
-        <div class="calendly-inner">
-          <div class="calendly-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          </div>
-          <h4>Calendly Embed Placeholder</h4>
-          <p>&lt;div class="calendly-inline-widget" data-url="your-calendly-link"&gt;&lt;/div&gt;</p>
-        </div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/joinascend-info/ascend-strategy-call-max?hide_gdpr_banner=1&background_color=0d0f15&text_color=f5f6f8&primary_color=3d63f5"></div>
       </div>
     </div>
   </div>
@@ -1361,7 +1486,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      STATS
 =============================================================== -->
-<section class="section" style="padding-top:clamp(48px,6vw,88px); padding-bottom:clamp(48px,6vw,88px);">
+<section class="section light-zone" style="padding-top:clamp(48px,6vw,88px); padding-bottom:clamp(48px,6vw,88px);">
   <div class="container">
     <div class="stats-bar reveal reveal-stagger">
       <div class="stat-cell" style="--i:0">
@@ -1381,9 +1506,50 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 </section>
 
 <!-- ============================================================
+     HIGH-TICKET EXPLAINER
+=============================================================== -->
+<section class="section light-zone section-alt">
+  <div class="container">
+    <div class="explainer-grid">
+      <div class="explainer-copy">
+        <div class="eyebrow reveal">The Opportunity</div>
+        <h2 class="section-title reveal" style="margin-bottom:4px;">Remote. High-income. In demand for life.</h2>
+        <p class="reveal"><strong>High-ticket sales</strong> means selling premium offers — programs, services and products priced from $2,000 to $20,000+ — for other companies, on commission. You're not cold-calling with a script and a quota you don't believe in. You're having structured conversations with pre-qualified people who already want what's being sold, and helping them make a decision.</p>
+        <p class="reveal">Because the price point is high, the commission is high too. Roles are almost always <strong>fully remote</strong> — every call is run from a laptop, on Zoom or the phone, for companies hiring across Australia and worldwide. It's a skill you build once and take with you into any industry, for the rest of your career.</p>
+        <div class="explainer-chips reveal">
+          <span class="chip">100% Remote</span>
+          <span class="chip">Commission-Based</span>
+          <span class="chip">Setter or Closer Path</span>
+          <span class="chip">No Degree Required</span>
+        </div>
+      </div>
+      <div class="model-card reveal">
+        <h4>How The Model Works</h4>
+        <div class="model-row">
+          <span class="k">Setter</span>
+          <span class="v">Qualifies leads and books calls for a Closer. <span>Often the entry point into the industry.</span></span>
+        </div>
+        <div class="model-row">
+          <span class="k">Closer</span>
+          <span class="v">Runs the sales call and closes the deal. <span>Higher commission, higher skill ceiling.</span></span>
+        </div>
+        <div class="model-row">
+          <span class="k">Pay</span>
+          <span class="v">Commission per sale, uncapped. <span>No salary ceiling on your output.</span></span>
+        </div>
+        <div class="model-row">
+          <span class="k">Location</span>
+          <span class="v">Anywhere with a laptop and wifi. <span>No office, no commute, no relocation.</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      WHY SALES
 =============================================================== -->
-<section class="section section-alt" id="program">
+<section class="section light-zone" id="program">
   <div class="section-glow section-glow--tr" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
@@ -1408,7 +1574,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         <div class="feature-icon"><svg viewBox="0 0 24 24" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 010 18M3 12h18"/></svg></div>
         <div class="feature-index">03</div>
         <h3 class="feature-title">Remote By Design</h3>
-        <p class="feature-desc">Every role we place into is fully remote. Work from anywhere in Australia, closing deals for companies across the globe.</p>
+        <p class="feature-desc">Every role we train you for is fully remote. Work from anywhere in Australia, closing deals for companies across the globe.</p>
       </div>
       <div class="feature-card" style="--i:3">
         <div class="feature-icon"><svg viewBox="0 0 24 24" stroke-width="1.4"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></div>
@@ -1421,9 +1587,303 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 </section>
 
 <!-- ============================================================
+     PACKAGES
+=============================================================== -->
+<section class="section light-zone section-alt" id="packages">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow reveal">Membership Paths</div>
+      <h2 class="section-title reveal">Two ways in. One standard.</h2>
+      <p class="section-desc reveal">Both paths run through the same training, the same certification checklist and the same roleplay review process. The difference is what happens once you're certified.</p>
+    </div>
+
+    <div class="packages-grid reveal reveal-stagger">
+      <div class="package-card" style="--i:0">
+        <div class="package-head">
+          <span class="pill pill-outline">Academy</span>
+          <h3 class="package-name">Academy</h3>
+          <p class="package-tag">Get certified. Land your own role.</p>
+        </div>
+        <ul class="package-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Full sales training curriculum — fundamentals through advanced closing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Certification Portal — a structured, coach-reviewed checklist</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Roleplay Hub — submit roleplays for coach feedback and sign-off</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Live group training calls, multiple times a week</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Private member community</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Training on how to find, apply for and land your own remote role</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Certified in ~2 months, for a member who puts the work in</li>
+        </ul>
+        <div class="package-price">Investment discussed on your strategy call</div>
+        <a href="#book" class="btn btn-ghost btn-block">Book a Call to Apply</a>
+      </div>
+
+      <div class="package-card is-featured" style="--i:1">
+        <div class="package-head">
+          <span class="pill pill-blue">Guaranteed Placement</span>
+          <h3 class="package-name">Accelerator</h3>
+          <p class="package-tag">Get certified. Get placed. Guaranteed.</p>
+        </div>
+        <ul class="package-list is-plus">
+          <li><strong>Everything in Academy</strong></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Guaranteed placement into a role through Ascend's private hiring network</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Done-for-you introductions — you're placed, not just taught to apply</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Post-placement 1:1 coaching to keep improving after you start</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Ongoing support through your first roles, so you keep earning more</li>
+        </ul>
+        <div class="package-price">Investment discussed on your strategy call</div>
+        <a href="#book" class="btn btn-primary btn-block">Book a Call to Apply</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS — STEPPER
+=============================================================== -->
+<section class="section light-zone" id="process">
+  <div class="section-glow section-glow--bl" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow reveal">The Pathway</div>
+      <h2 class="section-title reveal">Three stages. One outcome.</h2>
+      <p class="section-desc reveal">A fixed sequence with no shortcuts — every member moves through the same standard, in the same order, whichever package they choose.</p>
+    </div>
+
+    <div class="stepper reveal" id="stepper">
+      <div class="stepper-rail" role="tablist">
+        <button class="step-tab is-active" data-step="0" role="tab" aria-selected="true">
+          <span class="step-num">01</span>
+          <span class="step-name">Training</span>
+          <span class="step-tagline">Skool modules + live calls</span>
+        </button>
+        <button class="step-tab" data-step="1" role="tab" aria-selected="false">
+          <span class="step-num">02</span>
+          <span class="step-name">Certification</span>
+          <span class="step-tagline">Certification Portal + Roleplay Hub</span>
+        </button>
+        <button class="step-tab" data-step="2" role="tab" aria-selected="false">
+          <span class="step-num">03</span>
+          <span class="step-name">Placement</span>
+          <span class="step-tagline">Self-sourced or guaranteed</span>
+        </button>
+      </div>
+
+      <div class="step-panels">
+        <div class="step-panel is-active" data-panel="0">
+          <div>
+            <p class="step-panel-desc">Every member starts inside our training community, working through <strong>modules covering discovery, objection handling, closing frameworks and CRM fluency</strong> — plus live group coaching calls multiple times a week with coaches who've generated millions in sales revenue.</p>
+            <ul class="step-checklist">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Full curriculum, self-paced, hosted in our community</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Live training calls, multiple times per week</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Direct access to coaches for questions between calls</li>
+            </ul>
+          </div>
+          <div class="step-meta-card">
+            <div class="step-meta-row"><span class="k">Format</span><span class="v">Modules + Live Calls</span></div>
+            <div class="step-meta-row"><span class="k">Pace</span><span class="v">Self-Paced</span></div>
+            <div class="step-meta-row"><span class="k">Delivery</span><span class="v">100% Remote</span></div>
+          </div>
+        </div>
+
+        <div class="step-panel" data-panel="1">
+          <div>
+            <p class="step-panel-desc">Certification runs through our <strong>Certification Portal</strong> — a step-by-step checklist you submit stage by stage. Each submission is reviewed by a coach and either approved or sent back with feedback before you move to the next level. Roleplays are submitted through our <strong>Roleplay Hub</strong> and graded the same way.</p>
+            <ul class="step-checklist">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Five levels — Initiate, Trainee, Rep, Candidate, Graduate</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Every stage reviewed and approved by a real coach</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Roleplays submitted and graded before certification</li>
+            </ul>
+          </div>
+          <div class="step-meta-card">
+            <div class="step-meta-row"><span class="k">Format</span><span class="v">Coach-Reviewed</span></div>
+            <div class="step-meta-row"><span class="k">Duration</span><span class="v">~2 Months Avg.</span></div>
+            <div class="step-meta-row"><span class="k">Standard</span><span class="v">Submit / Approve</span></div>
+          </div>
+        </div>
+
+        <div class="step-panel" data-panel="2">
+          <div>
+            <p class="step-panel-desc">Once certified, <strong>Academy</strong> members are equipped to find and land their own remote role — we teach you exactly where to look and how to stand out. <strong>Accelerator</strong> members are placed directly into a role through Ascend's private hiring network, with post-placement 1:1 support to keep growing from there.</p>
+            <ul class="step-checklist">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Academy — hiring pipeline training, application support</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Accelerator — guaranteed placement via our private network</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Post-placement support so you keep earning more from day one</li>
+            </ul>
+          </div>
+          <div class="step-meta-card">
+            <div class="step-meta-row"><span class="k">Academy</span><span class="v">Self-Sourced</span></div>
+            <div class="step-meta-row"><span class="k">Accelerator</span><span class="v">Guaranteed</span></div>
+            <div class="step-meta-row"><span class="k">Avg. Timeline</span><span class="v">21 Days</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PLATFORM — TABS
+=============================================================== -->
+<section class="section light-zone" id="platform">
+  <div class="section-glow section-glow--tr" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow reveal">The Platform</div>
+      <h2 class="section-title reveal">Everything runs in one system.</h2>
+      <p class="section-desc reveal">Members train, get certified and stay supported across the Ascend app, our private Discord and our community — built and run by Ascend.</p>
+    </div>
+
+    <div class="platform-shell reveal" id="platformShell">
+      <div class="platform-tabs" role="tablist">
+        <button class="ptab is-active" data-tab="0">Certification Portal</button>
+        <button class="ptab" data-tab="1">Member Hub</button>
+        <button class="ptab" data-tab="2">Community</button>
+        <button class="ptab" data-tab="3">Roleplay Hub</button>
+        <button class="ptab" data-tab="4">Training Calls</button>
+      </div>
+
+      <div class="platform-body is-active" data-body="0">
+        <div class="platform-copy">
+          <div class="eyebrow">01 / Certification Portal</div>
+          <h3>Track your standing in real time.</h3>
+          <p>Every level — Initiate, Trainee, Rep, Candidate, Graduate — is a step-by-step checklist inside the Ascend app. Submit your work, and a coach reviews, gives feedback, then approves or sends it back.</p>
+          <div class="platform-tags"><span class="ptag">5 Certification Levels</span><span class="ptag">Coach-Reviewed</span><span class="ptag">Closer &amp; Setter Tracks</span></div>
+        </div>
+        <div class="platform-shot">
+          <!-- SCREENSHOT: certification-portal.png -->
+          <div class="mock-window dark-island">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">Ascend App — Hub</span></div>
+            <div class="mock-body mock-cert">
+              <div class="mock-toggle"><span class="active">Closer</span><span>Setter</span></div>
+              <div class="mock-ring-row">
+                <div class="mock-ring"><span>100%</span></div>
+                <div class="mock-ring-copy"><div class="t1">Closer Certification</div><div class="t2">Level: Graduate</div></div>
+              </div>
+              <div class="mock-level"><div class="mock-level-top"><span>LEVEL 1 · INITIATE</span><span>100%</span></div><div class="mock-level-bar"><i style="width:100%"></i></div></div>
+              <div class="mock-level"><div class="mock-level-top"><span>LEVEL 2 · TRAINEE</span><span>100%</span></div><div class="mock-level-bar"><i style="width:100%"></i></div></div>
+              <div class="mock-level"><div class="mock-level-top"><span>LEVEL 3 · REP</span><span>100%</span></div><div class="mock-level-bar"><i style="width:100%"></i></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-body" data-body="1">
+        <div class="platform-copy">
+          <div class="eyebrow">02 / Member Hub</div>
+          <h3>Your entire journey, one home screen.</h3>
+          <p>The Ascend app is your workspace — jump into the Certification Portal, your CRM once you're placed, admin tools, and everything else, all from one dashboard.</p>
+          <div class="platform-tags"><span class="ptag">Unified Workspace</span><span class="ptag">CRM Access</span><span class="ptag">Milestone Tracking</span></div>
+        </div>
+        <div class="platform-shot">
+          <!-- SCREENSHOT: member-hub.png -->
+          <div class="mock-window dark-island">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">Ascend App — Home</span></div>
+            <div class="mock-body mock-dash">
+              <div class="mock-dash-hero">
+                <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21 7.5 13.5 2 9h7z"/></svg></div>
+                <div class="t1">Start Here</div>
+                <div class="t2">Onboarding, analytics &amp; management</div>
+              </div>
+              <div class="mock-tiles">
+                <div class="mock-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z"/></svg></div><div class="t1">Certification</div><div class="t2">You're certified.</div></div>
+                <div class="mock-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M8 6V4h8v2"/></svg></div><div class="t1">CRM</div><div class="t2">Pipeline &amp; performance.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-body" data-body="2">
+        <div class="platform-copy">
+          <div class="eyebrow">03 / Community</div>
+          <h3>Surrounded by people doing the work.</h3>
+          <p>Our private community is where modules, announcements, member wins and daily conversation happen — a space full of members actually walking the path with you.</p>
+          <div class="platform-tags"><span class="ptag">Classroom</span><span class="ptag">Member Wins</span><span class="ptag">Live Events</span></div>
+        </div>
+        <div class="platform-shot">
+          <!-- SCREENSHOT: community.png -->
+          <div class="mock-window dark-island">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">Ascend Community</span></div>
+            <div class="mock-body mock-community">
+              <div class="mock-ctabs"><span class="active">Community</span><span>Classroom</span><span>Calendar</span><span>Leaderboard</span></div>
+              <div class="mock-post">
+                <div class="mock-post-top"><div class="mock-post-avatar"></div><div><div class="mock-post-name">Welcome To Ascend 🚀</div><div class="mock-post-meta">Announcements · Pinned</div></div></div>
+                <div class="mock-post-line"></div><div class="mock-post-line short"></div>
+                <div class="mock-post-foot"><span>39 likes</span><span>40 comments</span></div>
+              </div>
+              <div class="mock-post">
+                <div class="mock-post-top"><div class="mock-post-avatar"></div><div><div class="mock-post-name">Ascend Wins 🏆</div><div class="mock-post-meta">Community Chat</div></div></div>
+                <div class="mock-post-line short"></div>
+                <div class="mock-post-foot"><span>8 likes</span><span>9 comments</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-body" data-body="3">
+        <div class="platform-copy">
+          <div class="eyebrow">04 / Roleplay Hub</div>
+          <h3>Practice against real objections.</h3>
+          <p>Our roleplay system runs on Discord — pick a live prospect scenario, roleplay it out with another member, and submit the transcript for coach feedback before you sit your certification exam.</p>
+          <div class="platform-tags"><span class="ptag">AI Prospect Scenarios</span><span class="ptag">Peer Roleplay Rooms</span><span class="ptag">Coach Feedback</span></div>
+        </div>
+        <div class="platform-shot">
+          <!-- SCREENSHOT: roleplay-hub.png -->
+          <div class="mock-window dark-island">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">Ascend Discord — Roleplay Hub</span></div>
+            <div class="mock-body mock-rp">
+              <div class="mock-rp-side"><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div>
+              <div class="mock-rp-main">
+                <div class="mock-rp-bubble">
+                  <div class="h">OFFER: BODY RECOMP 1:1</div>
+                  <div class="row"><span>Price</span><span>$6,000</span></div>
+                  <div class="row"><span>Timeframe</span><span>12 Weeks</span></div>
+                </div>
+                <div class="mock-rp-line"></div>
+                <div class="mock-rp-line" style="width:60%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-body" data-body="4">
+        <div class="platform-copy">
+          <div class="eyebrow">05 / Training Calls</div>
+          <h3>Live coaching, multiple times a week.</h3>
+          <p>Join scheduled live calls with coaches who've personally generated millions in sales revenue — ask questions, review calls and sharpen your pitch in real time.</p>
+          <div class="platform-tags"><span class="ptag">Multiple Weekly Sessions</span><span class="ptag">Live Q&amp;A</span><span class="ptag">Recorded Replays</span></div>
+        </div>
+        <div class="platform-shot">
+          <!-- SCREENSHOT: training-calls.png -->
+          <div class="mock-window dark-island">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">Ascend — Live Training</span></div>
+            <div class="mock-body mock-calls">
+              <div class="mock-call-card">
+                <div class="mock-call-left"><div class="t1">Closer Group Call</div><div class="t2">Tue · 7:00 PM AEST</div></div>
+                <div class="mock-call-btn">Join Live</div>
+              </div>
+              <div class="mock-call-card">
+                <div class="mock-call-left"><div class="t1">Objection Handling Lab</div><div class="t2">Thu · 7:00 PM AEST</div></div>
+                <div class="mock-call-avatars"><i></i><i></i><i></i></div>
+              </div>
+              <div class="mock-call-card">
+                <div class="mock-call-left"><div class="t1">Setter Mini Group PM</div><div class="t2">Sat · 2:00 PM AEST</div></div>
+                <div class="mock-call-btn">Join Live</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      MEMBER RESULTS — MARQUEE
 =============================================================== -->
-<section class="section results-section" id="results">
+<section class="section light-zone results-section" id="results">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow reveal">Member Results</div>
@@ -1440,86 +1900,36 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
       <div class="marquee-track" id="track2"></div>
     </div>
   </div>
+  <div class="container">
+    <p class="results-note">Figures shown are individual member results, self-reported and not typical or guaranteed. See our full disclaimer in the footer.</p>
+  </div>
 </section>
 
 <!-- ============================================================
-     HOW IT WORKS — STEPPER
+     FOUNDERS
 =============================================================== -->
-<section class="section section-alt" id="process">
-  <div class="section-glow section-glow--bl" aria-hidden="true"></div>
+<section class="section light-zone section-alt" id="founders">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow reveal">The Pathway</div>
-      <h2 class="section-title reveal">Three stages. One outcome.</h2>
-      <p class="section-desc reveal">A fixed sequence with no shortcuts — every member moves through the same standard, in the same order.</p>
+      <div class="eyebrow reveal">Leadership</div>
+      <h2 class="section-title reveal">Built by operators, not marketers.</h2>
+      <p class="section-desc reveal">Ascend is led by two founders who built the training, the certification standard and the hiring network from scratch.</p>
     </div>
-
-    <div class="stepper reveal" id="stepper">
-      <div class="stepper-rail" role="tablist">
-        <button class="step-tab is-active" data-step="0" role="tab" aria-selected="true">
-          <span class="step-num">01</span>
-          <span class="step-name">Training</span>
-          <span class="step-tagline">4-week live curriculum</span>
-        </button>
-        <button class="step-tab" data-step="1" role="tab" aria-selected="false">
-          <span class="step-num">02</span>
-          <span class="step-name">Certification</span>
-          <span class="step-tagline">Practical roleplay exam</span>
-        </button>
-        <button class="step-tab" data-step="2" role="tab" aria-selected="false">
-          <span class="step-num">03</span>
-          <span class="step-name">Placement</span>
-          <span class="step-tagline">Warm intro to partners</span>
-        </button>
+    <div class="founders-grid reveal reveal-stagger">
+      <div class="founder-card" style="--i:0">
+        <div class="founder-photo dark-island"><span class="founder-initials">E</span></div>
+        <div class="founder-body">
+          <h3 class="founder-name">Evren</h3>
+          <div class="founder-title">Co-Founder</div>
+          <p class="founder-bio">[Bio placeholder — background, results and what Evren is responsible for at Ascend.]</p>
+        </div>
       </div>
-
-      <div class="step-panels">
-        <div class="step-panel is-active" data-panel="0">
-          <div>
-            <p class="step-panel-desc">Four weeks of live and recorded training covering <strong>discovery, objection handling, closing frameworks and CRM fluency</strong> — taught by coaches who close six and seven figures a year themselves.</p>
-            <ul class="step-checklist">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Live coaching calls, 3x per week</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Full call-recording breakdown library</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Weekly graded roleplay drills</li>
-            </ul>
-          </div>
-          <div class="step-meta-card">
-            <div class="step-meta-row"><span class="k">Format</span><span class="v">Live + Recorded</span></div>
-            <div class="step-meta-row"><span class="k">Duration</span><span class="v">4 Weeks</span></div>
-            <div class="step-meta-row"><span class="k">Delivery</span><span class="v">100% Remote</span></div>
-          </div>
-        </div>
-
-        <div class="step-panel" data-panel="1">
-          <div>
-            <p class="step-panel-desc">Members sit a <strong>live roleplay assessment and a final closing exam</strong>, graded directly by senior coaches against the Ascend certification rubric. No self-paced quizzes — this is a practical standard.</p>
-            <ul class="step-checklist">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Graded live by senior coaching staff</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Scored against a fixed rubric, not a curve</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>One re-sit included if required</li>
-            </ul>
-          </div>
-          <div class="step-meta-card">
-            <div class="step-meta-row"><span class="k">Format</span><span class="v">Practical Exam</span></div>
-            <div class="step-meta-row"><span class="k">Duration</span><span class="v">3–5 Days</span></div>
-            <div class="step-meta-row"><span class="k">Standard</span><span class="v">Pass / Re-sit</span></div>
-          </div>
-        </div>
-
-        <div class="step-panel" data-panel="2">
-          <div>
-            <p class="step-panel-desc">Certified members are placed directly into <strong>vetted partner companies</strong> hiring remote closers. We prep you for interviews and make the introduction — you walk in as a known quantity, not a cold applicant.</p>
-            <ul class="step-checklist">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Direct warm introduction to hiring partners</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>1:1 interview preparation</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Ongoing support through your first 90 days</li>
-            </ul>
-          </div>
-          <div class="step-meta-card">
-            <div class="step-meta-row"><span class="k">Format</span><span class="v">Warm Intro</span></div>
-            <div class="step-meta-row"><span class="k">Duration</span><span class="v">Avg. 21 Days</span></div>
-            <div class="step-meta-row"><span class="k">Outcome</span><span class="v">Real Offer</span></div>
-          </div>
+      <div class="founder-card" style="--i:1">
+        <div class="founder-photo dark-island"><span class="founder-initials">D</span></div>
+        <div class="founder-body">
+          <h3 class="founder-name">Daniel</h3>
+          <div class="founder-title">Co-Founder</div>
+          <p class="founder-bio">[Bio placeholder — background, results and what Daniel is responsible for at Ascend.]</p>
         </div>
       </div>
     </div>
@@ -1527,187 +1937,66 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 </section>
 
 <!-- ============================================================
-     PLATFORM — TABS
+     COACHES
 =============================================================== -->
-<section class="section" id="platform">
-  <div class="section-glow section-glow--tr" aria-hidden="true"></div>
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow reveal">The Platform</div>
-      <h2 class="section-title reveal">Everything runs in one system.</h2>
-      <p class="section-desc reveal">Members train, get certified and stay supported inside a single internal platform built for Ascend.</p>
-    </div>
-
-    <div class="platform-shell reveal" id="platformShell">
-      <div class="platform-tabs" role="tablist">
-        <button class="ptab is-active" data-tab="0">Certification Portal</button>
-        <button class="ptab" data-tab="1">Training Calls</button>
-        <button class="ptab" data-tab="2">Member Dashboard</button>
-        <button class="ptab" data-tab="3">Community</button>
-        <button class="ptab" data-tab="4">Roleplay Hub</button>
-      </div>
-
-      <div class="platform-body is-active" data-body="0">
-        <div class="platform-copy">
-          <div class="eyebrow">01 / Certification Portal</div>
-          <h3>Track your standing in real time.</h3>
-          <p>Every module, assessment and exam result lives in one place, with your certification status updated the moment coaches grade your work.</p>
-          <div class="platform-tags"><span class="ptag">Progress Tracking</span><span class="ptag">Exam Scheduling</span><span class="ptag">Digital Certificate</span></div>
-        </div>
-        <div class="platform-shot">
-          <div class="mock-window">
-            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">portal.ascend.au/certification</span></div>
-            <div class="mock-body">
-              <div class="mock-side"><i></i><i></i><i></i><i></i></div>
-              <div class="mock-main">
-                <div class="mock-row"><div class="mock-block accent"></div><div class="mock-block"></div></div>
-                <div class="mock-block tall"></div>
-                <div class="mock-row"><div class="mock-block"></div><div class="mock-block"></div><div class="mock-block"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="platform-body" data-body="1">
-        <div class="platform-copy">
-          <div class="eyebrow">02 / Training Calls</div>
-          <h3>Live coaching, three times a week.</h3>
-          <p>Join scheduled live sessions with coaches, or pull up any past call from the searchable recording archive.</p>
-          <div class="platform-tags"><span class="ptag">Live Schedule</span><span class="ptag">Recording Archive</span><span class="ptag">Timestamped Notes</span></div>
-        </div>
-        <div class="platform-shot">
-          <div class="mock-window">
-            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">portal.ascend.au/calls</span></div>
-            <div class="mock-body">
-              <div class="mock-side"><i></i><i></i><i></i><i></i></div>
-              <div class="mock-main">
-                <div class="mock-block tall accent"></div>
-                <div class="mock-row"><div class="mock-block"></div><div class="mock-block"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="platform-body" data-body="2">
-        <div class="platform-copy">
-          <div class="eyebrow">03 / Member Dashboard</div>
-          <h3>Your entire journey, one screen.</h3>
-          <p>Progress, upcoming calls, placement status and resources — the dashboard is the single home base for every active member.</p>
-          <div class="platform-tags"><span class="ptag">Unified Overview</span><span class="ptag">Milestone Tracking</span><span class="ptag">Resource Library</span></div>
-        </div>
-        <div class="platform-shot">
-          <div class="mock-window">
-            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">portal.ascend.au/dashboard</span></div>
-            <div class="mock-body">
-              <div class="mock-side"><i></i><i></i><i></i><i></i></div>
-              <div class="mock-main">
-                <div class="mock-row"><div class="mock-block accent"></div><div class="mock-block"></div><div class="mock-block"></div></div>
-                <div class="mock-row"><div class="mock-block tall"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="platform-body" data-body="3">
-        <div class="platform-copy">
-          <div class="eyebrow">04 / Community</div>
-          <h3>Surrounded by people doing the work.</h3>
-          <p>A private member community for accountability, deal reviews, and staying sharp long after certification.</p>
-          <div class="platform-tags"><span class="ptag">Private Channels</span><span class="ptag">Deal Reviews</span><span class="ptag">Alumni Network</span></div>
-        </div>
-        <div class="platform-shot">
-          <div class="mock-window">
-            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">portal.ascend.au/community</span></div>
-            <div class="mock-body">
-              <div class="mock-side"><i></i><i></i><i></i><i></i></div>
-              <div class="mock-main">
-                <div class="mock-row"><div class="mock-block"></div></div>
-                <div class="mock-row"><div class="mock-block"></div></div>
-                <div class="mock-row"><div class="mock-block accent"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="platform-body" data-body="4">
-        <div class="platform-copy">
-          <div class="eyebrow">05 / Roleplay Hub</div>
-          <h3>Practice against real objections.</h3>
-          <p>Structured roleplay scenarios and peer practice matching, so you walk into your certification exam having already handled it a hundred times.</p>
-          <div class="platform-tags"><span class="ptag">Scenario Library</span><span class="ptag">Peer Matching</span><span class="ptag">Coach Feedback</span></div>
-        </div>
-        <div class="platform-shot">
-          <div class="mock-window">
-            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">portal.ascend.au/roleplay</span></div>
-            <div class="mock-body">
-              <div class="mock-side"><i></i><i></i><i></i><i></i></div>
-              <div class="mock-main">
-                <div class="mock-block tall"></div>
-                <div class="mock-row"><div class="mock-block accent"></div><div class="mock-block"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     TEAM
-=============================================================== -->
-<section class="section section-alt" id="team">
+<section class="section light-zone" id="team">
   <div class="section-glow section-glow--bl" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow reveal">Meet The Team</div>
+      <div class="eyebrow reveal">Meet The Coaches</div>
       <h2 class="section-title reveal">Coached by people who still close.</h2>
-      <p class="section-desc reveal">Every coach on staff carries an active production number — nobody teaches from theory alone.</p>
+      <p class="section-desc reveal">Every coach on staff reviews real member submissions every week — nobody teaches from theory alone.</p>
     </div>
 
     <div class="team-grid reveal reveal-stagger">
       <div class="coach-card" style="--i:0">
-        <div class="coach-photo"><span class="coach-initials">JM</span></div>
-        <h3 class="coach-name">James Mercer</h3>
-        <div class="coach-title">Founder &amp; Head Coach</div>
-        <p class="coach-bio">Built and led three remote sales floors before founding Ascend to standardise how the skill is taught in Australia.</p>
+        <div class="coach-photo dark-island"><span class="coach-initials">C</span></div>
+        <h3 class="coach-name">Chris</h3>
+        <div class="coach-title">Director &amp; Head Coach</div>
+        <p class="coach-bio">[Bio placeholder — background, results and coaching style.]</p>
         <ul class="coach-accolades">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>$14M+ Personally Closed</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>Ex-Head of Sales, Vantage Group</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>[Accolade placeholder]</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>[Accolade placeholder]</li>
         </ul>
       </div>
       <div class="coach-card" style="--i:1">
-        <div class="coach-photo"><span class="coach-initials">SC</span></div>
-        <h3 class="coach-name">Sarah Coleman</h3>
-        <div class="coach-title">Head of Sales Training</div>
-        <p class="coach-bio">Designs the certification curriculum and personally grades final exams for every certifying cohort.</p>
+        <div class="coach-photo dark-island"><span class="coach-initials">J</span></div>
+        <h3 class="coach-name">Jay</h3>
+        <div class="coach-title">Sales Coach</div>
+        <p class="coach-bio">[Bio placeholder — background, results and coaching style.]</p>
         <ul class="coach-accolades">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>350+ Reps Trained</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>Ex-Enterprise AE, SaaS</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>[Accolade placeholder]</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>[Accolade placeholder]</li>
         </ul>
       </div>
       <div class="coach-card" style="--i:2">
-        <div class="coach-photo"><span class="coach-initials">DK</span></div>
-        <h3 class="coach-name">Daniel Kwan</h3>
-        <div class="coach-title">Director of Placements</div>
-        <p class="coach-bio">Runs the partner network — the companies that hire directly out of every certifying cohort.</p>
+        <div class="coach-photo dark-island"><span class="coach-initials">C</span></div>
+        <h3 class="coach-name">Chloe</h3>
+        <div class="coach-title">Sales Coach</div>
+        <p class="coach-bio">[Bio placeholder — background, results and coaching style.]</p>
         <ul class="coach-accolades">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>60+ Hiring Partners</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>Ex-Talent Lead, Employment Hero</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>[Accolade placeholder]</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>[Accolade placeholder]</li>
         </ul>
       </div>
       <div class="coach-card" style="--i:3">
-        <div class="coach-photo"><span class="coach-initials">RP</span></div>
-        <h3 class="coach-name">Ruby Patterson</h3>
-        <div class="coach-title">Community &amp; Roleplay Lead</div>
-        <p class="coach-bio">Runs live roleplay sessions and keeps the member community sharp between training weeks.</p>
+        <div class="coach-photo dark-island"><span class="coach-initials">S</span></div>
+        <h3 class="coach-name">Siobhan</h3>
+        <div class="coach-title">Sales Coach</div>
+        <p class="coach-bio">[Bio placeholder — background, results and coaching style.]</p>
         <ul class="coach-accolades">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>Ascend Cohort 1 Graduate</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>$6M+ Personally Closed</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>[Accolade placeholder]</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>[Accolade placeholder]</li>
+        </ul>
+      </div>
+      <div class="coach-card" style="--i:4">
+        <div class="coach-photo dark-island"><span class="coach-initials">M</span></div>
+        <h3 class="coach-name">Max</h3>
+        <div class="coach-title">Sales Coach &amp; Admissions</div>
+        <p class="coach-bio">[Bio placeholder — background, results and coaching style.]</p>
+        <ul class="coach-accolades">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>[Accolade placeholder]</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9l-4.8 4.5L17.5 21 12 17.6 6.5 21l1.3-7.5L3 9l6.1-.7L12 2z"/></svg>[Accolade placeholder]</li>
         </ul>
       </div>
     </div>
@@ -1724,15 +2013,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
       <div>
         <div class="eyebrow" style="margin-bottom:20px;">Start Here</div>
         <h2 class="final-cta-title">Book a call, or apply direct.</h2>
-        <p class="final-cta-sub">Applications for the next certification intake are open. Most members hear back within 48 hours of booking a call.</p>
+        <p class="final-cta-sub">Applications for the next intake are open across both Academy and Accelerator. Most applicants hear back within 48 hours of booking a call.</p>
         <div class="final-calendly">
-          <div class="calendly-inner">
-            <div class="calendly-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-            </div>
-            <h4>Calendly Embed Placeholder</h4>
-            <p>&lt;div class="calendly-inline-widget" data-url="your-calendly-link"&gt;&lt;/div&gt;</p>
-          </div>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/joinascend-info/ascend-strategy-call-max?hide_gdpr_banner=1&background_color=0d0f15&text_color=f5f6f8&primary_color=3d63f5"></div>
         </div>
       </div>
       <div class="apply-card">
@@ -1743,8 +2026,20 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
           <li><span>—</span>18–30 years old, based in Australia</li>
           <li><span>—</span>Full-time availability preferred</li>
         </ul>
-        <a href="#" class="btn btn-ghost" style="width:100%;">Open Application (Typeform)</a>
+        <a href="#" class="btn btn-ghost btn-block">Open Application (Typeform)</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DISCLAIMER
+=============================================================== -->
+<section class="disclaimer">
+  <div class="container">
+    <div class="disclaimer-inner">
+      <h5>Results &amp; Earnings Disclaimer</h5>
+      <p>Ascend Executive Group Pty Ltd provides sales training, certification and career placement education. <strong>Results mentioned throughout this website — including earnings figures, placement timelines and member outcomes — reflect the individual, self-reported experiences of specific members and are not typical or guaranteed.</strong> Your results will depend on factors including your effort, prior experience, market conditions and the hiring companies you engage with. Academy membership does not guarantee employment or income of any kind. Accelerator membership includes a placement guarantee as defined in your enrolment agreement — ask our team for full terms on your strategy call. Nothing on this website constitutes a promise of specific earnings or employment outcomes, and every result shown belongs to a member who did the work required to achieve it.</p>
     </div>
   </div>
 </section>
@@ -1756,8 +2051,15 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#top" class="logo"><span class="logo-mark"></span>ASCEND</a>
-        <p>The certification standard for remote high-ticket sales in Australia. We train, certify and place.</p>
+        <a href="#top" class="logo">
+          <svg class="logo-mark" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 2 L42 38 H32.5 L22 18.5 L11.5 38 H2 L22 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M22 15 L34 38 H27.5 L22 27.5 L16.5 38 H10 L22 15Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity="0.55"/>
+          </svg>
+          ASCEND
+        </a>
+        <p>Ascend Executive Group Pty Ltd trains, certifies and places Australians into real remote high-ticket sales roles.</p>
+        <p><a href="mailto:hello@joinascend.com.au" style="color:var(--grey-1-dark);">hello@joinascend.com.au</a></p>
         <div class="footer-social">
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
           <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2.5 2.5 0 015 0V17M12 10v7"/></svg></a>
@@ -1768,6 +2070,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         <h5>Program</h5>
         <ul>
           <li><a href="#program">Why Sales</a></li>
+          <li><a href="#packages">Packages</a></li>
           <li><a href="#process">How It Works</a></li>
           <li><a href="#platform">The Platform</a></li>
           <li><a href="#results">Member Results</a></li>
@@ -1776,10 +2079,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
       <div class="footer-col">
         <h5>Company</h5>
         <ul>
-          <li><a href="#team">Our Coaches</a></li>
+          <li><a href="#founders">Founders</a></li>
+          <li><a href="#team">Coaches</a></li>
           <li><a href="#book">Book a Call</a></li>
           <li><a href="#apply">Apply Now</a></li>
-          <li><a href="#">Careers</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1787,17 +2090,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         <ul>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Earnings Disclaimer</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Ascend Sales Academy Pty Ltd. All rights reserved.</span>
-      <span>ABN 00 000 000 000 · Sydney, Australia</span>
+      <span>© <span id="year"></span> Ascend Executive Group Pty Ltd. All rights reserved.</span>
+      <span>ACN 685 921 251 · ABN 23 685 921 251</span>
     </div>
   </div>
 </footer>
 
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script>
 (function(){
   "use strict";
@@ -1842,16 +2146,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   } else {
     revealEls.forEach(function(el){ el.classList.add('is-visible'); });
   }
-
-  /* ---------- VSL placeholder click ---------- */
-  var vslScreen = document.getElementById('vslScreen');
-  var vslActivate = function(){
-    vslScreen.querySelector('.vsl-watermark').textContent = 'Replace with real <video> or embed';
-  };
-  vslScreen.addEventListener('click', vslActivate);
-  vslScreen.addEventListener('keydown', function(e){
-    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); vslActivate(); }
-  });
 
   /* ---------- How It Works stepper ---------- */
   var stepTabs = document.querySelectorAll('.step-tab');
@@ -1908,7 +2202,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
   function buildCard(w){
     var card = document.createElement('div');
-    card.className = 'win-card';
+    card.className = 'win-card dark-island';
     card.innerHTML =
       '<div class="win-top">'+
         '<div class="win-avatar">'+initials(w.name)+'</div>'+
