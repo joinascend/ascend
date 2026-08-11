@@ -27,13 +27,7 @@
   --white-dark:#f5f6f8; --grey-1-dark:#a9adb8; --grey-2-dark:#7d818d; --grey-3-dark:#53565f;
   --silver-dark:#b7bbc2; --silver-bright-dark:#e2e4e8; --silver-line-dark:rgba(183,187,194,0.35); --silver-dim-dark:rgba(183,187,194,0.14);
 
-  /* light constants */
-  --bg-light:#ffffff; --surface-light:#f6f7f9; --surface-2-light:#eef0f4; --surface-3-light:#e3e6ed;
-  --line-light:rgba(15,20,40,0.11); --line-strong-light:rgba(15,20,40,0.19);
-  --white-light:#0b0d13; --grey-1-light:#535762; --grey-2-light:#767a86; --grey-3-light:#989ba5;
-  --silver-light:#5b6470; --silver-bright-light:#1c2230; --silver-line-light:rgba(30,40,60,0.3); --silver-dim-light:rgba(30,40,60,0.06);
-
-  /* dynamic (default = dark) */
+  /* dynamic tokens */
   --bg:var(--bg-dark); --surface:var(--surface-dark); --surface-2:var(--surface-2-dark); --surface-3:var(--surface-3-dark);
   --line:var(--line-dark); --line-strong:var(--line-strong-dark);
   --white:var(--white-dark); --grey-1:var(--grey-1-dark); --grey-2:var(--grey-2-dark); --grey-3:var(--grey-3-dark);
@@ -51,20 +45,6 @@
   --section-y:clamp(64px, 10vw, 144px);
   --ease:cubic-bezier(.16,.84,.44,1);
   --radius:3px;
-}
-.light-zone{
-  --bg:var(--bg-light); --surface:var(--surface-light); --surface-2:var(--surface-2-light); --surface-3:var(--surface-3-light);
-  --line:var(--line-light); --line-strong:var(--line-strong-light);
-  --white:var(--white-light); --grey-1:var(--grey-1-light); --grey-2:var(--grey-2-light); --grey-3:var(--grey-3-light);
-  --silver:var(--silver-light); --silver-bright:var(--silver-bright-light); --silver-line:var(--silver-line-light); --silver-dim:var(--silver-dim-light);
-  background:var(--bg); color:var(--white);
-}
-.dark-island{
-  --bg:var(--bg-dark); --surface:var(--surface-dark); --surface-2:var(--surface-2-dark); --surface-3:var(--surface-3-dark);
-  --line:var(--line-dark); --line-strong:var(--line-strong-dark);
-  --white:var(--white-dark); --grey-1:var(--grey-1-dark); --grey-2:var(--grey-2-dark); --grey-3:var(--grey-3-dark);
-  --silver:var(--silver-dark); --silver-bright:var(--silver-bright-dark); --silver-line:var(--silver-line-dark); --silver-dim:var(--silver-dim-dark);
-  background:var(--bg); color:var(--white);
 }
 
 *,*::before,*::after{box-sizing:border-box;}
@@ -137,7 +117,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   align-items:center;
   gap:10px;
 }
-.light-zone .eyebrow{color:var(--blue);}
 .eyebrow::before{
   content:"";
   width:6px;
@@ -1046,12 +1025,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .mock-window{
   width:100%;
+  min-height:360px;
   border:1px solid var(--line-strong);
-  aspect-ratio:16/11;
   display:flex;
   flex-direction:column;
   box-shadow:0 30px 70px -20px rgba(0,0,0,.7);
-  overflow:hidden;
+  background:var(--bg);
 }
 .mock-bar{
   display:flex;
@@ -1069,10 +1048,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   letter-spacing:.04em;
   font-family:ui-monospace, monospace;
 }
-.mock-body{flex:1; min-height:0; overflow:hidden;}
+.mock-body{flex:1;}
 
 /* cert portal mock */
-.mock-cert{padding:20px; display:flex; flex-direction:column; gap:14px; height:100%; overflow:hidden;}
+.mock-cert{padding:20px; display:flex; flex-direction:column; gap:12px;}
 .mock-toggle{display:flex; gap:8px;}
 .mock-toggle span{font-size:10.5px; padding:7px 14px; border-radius:999px; border:1px solid var(--line-strong); color:var(--grey-2);}
 .mock-toggle span.active{background:var(--blue); border-color:var(--blue); color:#fff;}
@@ -1094,7 +1073,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .mock-level-bar i{display:block; height:100%; background:var(--green-bright);}
 
 /* dashboard mock */
-.mock-dash{padding:18px; display:flex; flex-direction:column; gap:12px; height:100%; overflow:hidden;}
+.mock-dash{padding:18px; display:flex; flex-direction:column; gap:12px;}
 .mock-dash-hero{border:1px solid var(--line); background:var(--surface-2); padding:16px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px;}
 .mock-dash-hero .ic{width:30px;height:30px;border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center;}
 .mock-dash-hero .ic svg{width:14px;height:14px;stroke:var(--blue);}
@@ -1108,7 +1087,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .mock-tile .t2{font-size:9.5px; color:var(--grey-2); line-height:1.4;}
 
 /* community mock */
-.mock-community{padding:16px; display:flex; flex-direction:column; gap:10px; height:100%; overflow:hidden;}
+.mock-community{padding:16px; display:flex; flex-direction:column; gap:10px;}
 .mock-ctabs{display:flex; gap:14px; border-bottom:1px solid var(--line); padding-bottom:8px; font-size:10px; color:var(--grey-2); letter-spacing:.03em;}
 .mock-ctabs span.active{color:var(--white); border-bottom:2px solid var(--blue); padding-bottom:8px; margin-bottom:-9px;}
 .mock-post{border:1px solid var(--line); background:var(--surface-2); padding:12px; display:flex; flex-direction:column; gap:8px;}
@@ -1121,20 +1100,20 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .mock-post-foot{display:flex; gap:12px; font-size:9.5px; color:var(--grey-2);}
 
 /* roleplay mock */
-.mock-rp{display:grid; grid-template-columns:80px 1fr; height:100%; overflow:hidden;}
+.mock-rp{display:grid; grid-template-columns:80px 1fr;}
 .mock-rp-side{border-right:1px solid var(--line); padding:12px 8px; display:flex; flex-direction:column; gap:6px;}
 .mock-rp-side i{display:block; height:6px; background:var(--surface-3);}
 .mock-rp-side i:nth-child(1){width:75%;}
 .mock-rp-side i:nth-child(2){width:55%;}
 .mock-rp-side i.on{background:var(--blue-dim); border:1px solid var(--blue-line); height:16px;}
-.mock-rp-main{padding:14px; display:flex; flex-direction:column; gap:10px; overflow:hidden;}
+.mock-rp-main{padding:14px; display:flex; flex-direction:column; gap:10px;}
 .mock-rp-bubble{border:1px solid var(--blue-line); background:var(--blue-dim); padding:12px; font-size:9.5px; color:var(--grey-1); line-height:1.6;}
 .mock-rp-bubble .h{font-size:10px; font-weight:700; color:var(--blue-bright); margin-bottom:6px; letter-spacing:.03em;}
 .mock-rp-bubble .row{display:flex; justify-content:space-between; margin-top:4px;}
 .mock-rp-line{height:6px; background:var(--surface-3); width:80%;}
 
 /* calls mock */
-.mock-calls{padding:18px; display:flex; flex-direction:column; gap:12px; height:100%; overflow:hidden;}
+.mock-calls{padding:18px; display:flex; flex-direction:column; gap:12px;}
 .mock-call-card{border:1px solid var(--line); background:var(--surface-2); padding:14px; display:flex; justify-content:space-between; align-items:center; gap:10px;}
 .mock-call-left{display:flex; flex-direction:column; gap:4px;}
 .mock-call-left .t1{font-size:11.5px; font-weight:600; color:var(--white);}
@@ -1486,7 +1465,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      STATS
 =============================================================== -->
-<section class="section light-zone" style="padding-top:clamp(48px,6vw,88px); padding-bottom:clamp(48px,6vw,88px);">
+<section class="section" style="padding-top:clamp(48px,6vw,88px); padding-bottom:clamp(48px,6vw,88px);">
   <div class="container">
     <div class="stats-bar reveal reveal-stagger">
       <div class="stat-cell" style="--i:0">
@@ -1508,14 +1487,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      HIGH-TICKET EXPLAINER
 =============================================================== -->
-<section class="section light-zone section-alt">
+<section class="section section-alt">
   <div class="container">
     <div class="explainer-grid">
       <div class="explainer-copy">
         <div class="eyebrow reveal">The Opportunity</div>
         <h2 class="section-title reveal" style="margin-bottom:4px;">Remote. High-income. In demand for life.</h2>
-        <p class="reveal"><strong>High-ticket sales</strong> means selling premium offers — programs, services and products priced from $2,000 to $20,000+ — for other companies, on commission. You're not cold-calling with a script and a quota you don't believe in. You're having structured conversations with pre-qualified people who already want what's being sold, and helping them make a decision.</p>
-        <p class="reveal">Because the price point is high, the commission is high too. Roles are almost always <strong>fully remote</strong> — every call is run from a laptop, on Zoom or the phone, for companies hiring across Australia and worldwide. It's a skill you build once and take with you into any industry, for the rest of your career.</p>
+        <p class="reveal"><strong>High-ticket sales</strong> means selling premium offers — $2,000 to $20,000+ — for other companies, on commission. Pre-qualified people who already want what's being sold, structured conversations, and a real decision at the end of the call.</p>
+        <p class="reveal">High price point, high commission. <strong>Fully remote</strong>, every time — a skill you build once and carry into any industry, for life.</p>
         <div class="explainer-chips reveal">
           <span class="chip">100% Remote</span>
           <span class="chip">Commission-Based</span>
@@ -1549,7 +1528,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      WHY SALES
 =============================================================== -->
-<section class="section light-zone" id="program">
+<section class="section" id="program">
   <div class="section-glow section-glow--tr" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
@@ -1589,7 +1568,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      PACKAGES
 =============================================================== -->
-<section class="section light-zone section-alt" id="packages">
+<section class="section section-alt" id="packages">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow reveal">Membership Paths</div>
@@ -1605,13 +1584,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
           <p class="package-tag">Get certified. Land your own role.</p>
         </div>
         <ul class="package-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Full sales training curriculum — fundamentals through advanced closing</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Certification Portal — a structured, coach-reviewed checklist</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Roleplay Hub — submit roleplays for coach feedback and sign-off</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Live group training calls, multiple times a week</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Full training curriculum, fundamentals to advanced closing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Certification Portal &amp; Roleplay Hub, coach-reviewed</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Live training calls, multiple times a week</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Private member community</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Training on how to find, apply for and land your own remote role</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Certified in ~2 months, for a member who puts the work in</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Trained to find and land your own remote role</li>
         </ul>
         <div class="package-price">Investment discussed on your strategy call</div>
         <a href="#book" class="btn btn-ghost btn-block">Book a Call to Apply</a>
@@ -1625,10 +1602,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         </div>
         <ul class="package-list is-plus">
           <li><strong>Everything in Academy</strong></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Guaranteed placement into a role through Ascend's private hiring network</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Done-for-you introductions — you're placed, not just taught to apply</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Post-placement 1:1 coaching to keep improving after you start</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Ongoing support through your first roles, so you keep earning more</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Guaranteed placement via Ascend's private hiring network</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Done-for-you introductions — you're placed, not just taught</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Post-placement 1:1 coaching to keep growing your income</li>
         </ul>
         <div class="package-price">Investment discussed on your strategy call</div>
         <a href="#book" class="btn btn-primary btn-block">Book a Call to Apply</a>
@@ -1640,7 +1616,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      HOW IT WORKS — STEPPER
 =============================================================== -->
-<section class="section light-zone" id="process">
+<section class="section" id="process">
   <div class="section-glow section-glow--bl" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
@@ -1671,7 +1647,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
       <div class="step-panels">
         <div class="step-panel is-active" data-panel="0">
           <div>
-            <p class="step-panel-desc">Every member starts inside our training community, working through <strong>modules covering discovery, objection handling, closing frameworks and CRM fluency</strong> — plus live group coaching calls multiple times a week with coaches who've generated millions in sales revenue.</p>
+            <p class="step-panel-desc">Modules on <strong>discovery, objection handling, closing and CRM fluency</strong>, plus live coaching calls multiple times a week with coaches who've generated millions in sales revenue.</p>
             <ul class="step-checklist">
               <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Full curriculum, self-paced, hosted in our community</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Live training calls, multiple times per week</li>
@@ -1687,7 +1663,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
         <div class="step-panel" data-panel="1">
           <div>
-            <p class="step-panel-desc">Certification runs through our <strong>Certification Portal</strong> — a step-by-step checklist you submit stage by stage. Each submission is reviewed by a coach and either approved or sent back with feedback before you move to the next level. Roleplays are submitted through our <strong>Roleplay Hub</strong> and graded the same way.</p>
+            <p class="step-panel-desc">A step-by-step checklist in the <strong>Certification Portal</strong>, plus roleplays submitted through the <strong>Roleplay Hub</strong>. Every stage is reviewed by a coach before you move on.</p>
             <ul class="step-checklist">
               <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Five levels — Initiate, Trainee, Rep, Candidate, Graduate</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Every stage reviewed and approved by a real coach</li>
@@ -1703,7 +1679,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
         <div class="step-panel" data-panel="2">
           <div>
-            <p class="step-panel-desc">Once certified, <strong>Academy</strong> members are equipped to find and land their own remote role — we teach you exactly where to look and how to stand out. <strong>Accelerator</strong> members are placed directly into a role through Ascend's private hiring network, with post-placement 1:1 support to keep growing from there.</p>
+            <p class="step-panel-desc"><strong>Academy</strong> members land their own role, trained on exactly where to look. <strong>Accelerator</strong> members are placed directly through our private hiring network.</p>
             <ul class="step-checklist">
               <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Academy — hiring pipeline training, application support</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Accelerator — guaranteed placement via our private network</li>
@@ -1724,7 +1700,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      PLATFORM — TABS
 =============================================================== -->
-<section class="section light-zone" id="platform">
+<section class="section section-alt" id="platform">
   <div class="section-glow section-glow--tr" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
@@ -1746,12 +1722,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         <div class="platform-copy">
           <div class="eyebrow">01 / Certification Portal</div>
           <h3>Track your standing in real time.</h3>
-          <p>Every level — Initiate, Trainee, Rep, Candidate, Graduate — is a step-by-step checklist inside the Ascend app. Submit your work, and a coach reviews, gives feedback, then approves or sends it back.</p>
+          <p>Five levels, Initiate through Graduate. Submit each stage, a coach reviews it, and you're approved or sent back with feedback.</p>
           <div class="platform-tags"><span class="ptag">5 Certification Levels</span><span class="ptag">Coach-Reviewed</span><span class="ptag">Closer &amp; Setter Tracks</span></div>
         </div>
         <div class="platform-shot">
           <!-- SCREENSHOT: certification-portal.png -->
-          <div class="mock-window dark-island">
+          <div class="mock-window">
             <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">Ascend App — Hub</span></div>
             <div class="mock-body mock-cert">
               <div class="mock-toggle"><span class="active">Closer</span><span>Setter</span></div>
@@ -1771,12 +1747,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         <div class="platform-copy">
           <div class="eyebrow">02 / Member Hub</div>
           <h3>Your entire journey, one home screen.</h3>
-          <p>The Ascend app is your workspace — jump into the Certification Portal, your CRM once you're placed, admin tools, and everything else, all from one dashboard.</p>
+          <p>Certification Portal, CRM, milestones — everything lives on one dashboard.</p>
           <div class="platform-tags"><span class="ptag">Unified Workspace</span><span class="ptag">CRM Access</span><span class="ptag">Milestone Tracking</span></div>
         </div>
         <div class="platform-shot">
           <!-- SCREENSHOT: member-hub.png -->
-          <div class="mock-window dark-island">
+          <div class="mock-window">
             <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">Ascend App — Home</span></div>
             <div class="mock-body mock-dash">
               <div class="mock-dash-hero">
@@ -1797,12 +1773,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         <div class="platform-copy">
           <div class="eyebrow">03 / Community</div>
           <h3>Surrounded by people doing the work.</h3>
-          <p>Our private community is where modules, announcements, member wins and daily conversation happen — a space full of members actually walking the path with you.</p>
+          <p>Modules, announcements and member wins — a space full of people actually walking the path with you.</p>
           <div class="platform-tags"><span class="ptag">Classroom</span><span class="ptag">Member Wins</span><span class="ptag">Live Events</span></div>
         </div>
         <div class="platform-shot">
           <!-- SCREENSHOT: community.png -->
-          <div class="mock-window dark-island">
+          <div class="mock-window">
             <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">Ascend Community</span></div>
             <div class="mock-body mock-community">
               <div class="mock-ctabs"><span class="active">Community</span><span>Classroom</span><span>Calendar</span><span>Leaderboard</span></div>
@@ -1825,12 +1801,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         <div class="platform-copy">
           <div class="eyebrow">04 / Roleplay Hub</div>
           <h3>Practice against real objections.</h3>
-          <p>Our roleplay system runs on Discord — pick a live prospect scenario, roleplay it out with another member, and submit the transcript for coach feedback before you sit your certification exam.</p>
+          <p>Live on Discord — run a prospect scenario with another member, then submit it for coach feedback.</p>
           <div class="platform-tags"><span class="ptag">AI Prospect Scenarios</span><span class="ptag">Peer Roleplay Rooms</span><span class="ptag">Coach Feedback</span></div>
         </div>
         <div class="platform-shot">
           <!-- SCREENSHOT: roleplay-hub.png -->
-          <div class="mock-window dark-island">
+          <div class="mock-window">
             <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">Ascend Discord — Roleplay Hub</span></div>
             <div class="mock-body mock-rp">
               <div class="mock-rp-side"><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div>
@@ -1852,12 +1828,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         <div class="platform-copy">
           <div class="eyebrow">05 / Training Calls</div>
           <h3>Live coaching, multiple times a week.</h3>
-          <p>Join scheduled live calls with coaches who've personally generated millions in sales revenue — ask questions, review calls and sharpen your pitch in real time.</p>
+          <p>Live sessions with coaches who've personally generated millions in sales revenue.</p>
           <div class="platform-tags"><span class="ptag">Multiple Weekly Sessions</span><span class="ptag">Live Q&amp;A</span><span class="ptag">Recorded Replays</span></div>
         </div>
         <div class="platform-shot">
           <!-- SCREENSHOT: training-calls.png -->
-          <div class="mock-window dark-island">
+          <div class="mock-window">
             <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">Ascend — Live Training</span></div>
             <div class="mock-body mock-calls">
               <div class="mock-call-card">
@@ -1883,7 +1859,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      MEMBER RESULTS — MARQUEE
 =============================================================== -->
-<section class="section light-zone results-section" id="results">
+<section class="section results-section" id="results">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow reveal">Member Results</div>
@@ -1908,7 +1884,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      FOUNDERS
 =============================================================== -->
-<section class="section light-zone section-alt" id="founders">
+<section class="section section-alt" id="founders">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow reveal">Leadership</div>
@@ -1917,7 +1893,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
     </div>
     <div class="founders-grid reveal reveal-stagger">
       <div class="founder-card" style="--i:0">
-        <div class="founder-photo dark-island"><span class="founder-initials">E</span></div>
+        <div class="founder-photo"><span class="founder-initials">E</span></div>
         <div class="founder-body">
           <h3 class="founder-name">Evren</h3>
           <div class="founder-title">Co-Founder</div>
@@ -1925,7 +1901,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         </div>
       </div>
       <div class="founder-card" style="--i:1">
-        <div class="founder-photo dark-island"><span class="founder-initials">D</span></div>
+        <div class="founder-photo"><span class="founder-initials">D</span></div>
         <div class="founder-body">
           <h3 class="founder-name">Daniel</h3>
           <div class="founder-title">Co-Founder</div>
@@ -1939,7 +1915,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      COACHES
 =============================================================== -->
-<section class="section light-zone" id="team">
+<section class="section" id="team">
   <div class="section-glow section-glow--bl" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
@@ -1950,7 +1926,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
     <div class="team-grid reveal reveal-stagger">
       <div class="coach-card" style="--i:0">
-        <div class="coach-photo dark-island"><span class="coach-initials">C</span></div>
+        <div class="coach-photo"><span class="coach-initials">C</span></div>
         <h3 class="coach-name">Chris</h3>
         <div class="coach-title">Director &amp; Head Coach</div>
         <p class="coach-bio">[Bio placeholder — background, results and coaching style.]</p>
@@ -1960,7 +1936,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         </ul>
       </div>
       <div class="coach-card" style="--i:1">
-        <div class="coach-photo dark-island"><span class="coach-initials">J</span></div>
+        <div class="coach-photo"><span class="coach-initials">J</span></div>
         <h3 class="coach-name">Jay</h3>
         <div class="coach-title">Sales Coach</div>
         <p class="coach-bio">[Bio placeholder — background, results and coaching style.]</p>
@@ -1970,7 +1946,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         </ul>
       </div>
       <div class="coach-card" style="--i:2">
-        <div class="coach-photo dark-island"><span class="coach-initials">C</span></div>
+        <div class="coach-photo"><span class="coach-initials">C</span></div>
         <h3 class="coach-name">Chloe</h3>
         <div class="coach-title">Sales Coach</div>
         <p class="coach-bio">[Bio placeholder — background, results and coaching style.]</p>
@@ -1980,7 +1956,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         </ul>
       </div>
       <div class="coach-card" style="--i:3">
-        <div class="coach-photo dark-island"><span class="coach-initials">S</span></div>
+        <div class="coach-photo"><span class="coach-initials">S</span></div>
         <h3 class="coach-name">Siobhan</h3>
         <div class="coach-title">Sales Coach</div>
         <p class="coach-bio">[Bio placeholder — background, results and coaching style.]</p>
@@ -1990,7 +1966,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
         </ul>
       </div>
       <div class="coach-card" style="--i:4">
-        <div class="coach-photo dark-island"><span class="coach-initials">M</span></div>
+        <div class="coach-photo"><span class="coach-initials">M</span></div>
         <h3 class="coach-name">Max</h3>
         <div class="coach-title">Sales Coach &amp; Admissions</div>
         <p class="coach-bio">[Bio placeholder — background, results and coaching style.]</p>
@@ -2039,7 +2015,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   <div class="container">
     <div class="disclaimer-inner">
       <h5>Results &amp; Earnings Disclaimer</h5>
-      <p>Ascend Executive Group Pty Ltd provides sales training, certification and career placement education. <strong>Results mentioned throughout this website — including earnings figures, placement timelines and member outcomes — reflect the individual, self-reported experiences of specific members and are not typical or guaranteed.</strong> Your results will depend on factors including your effort, prior experience, market conditions and the hiring companies you engage with. Academy membership does not guarantee employment or income of any kind. Accelerator membership includes a placement guarantee as defined in your enrolment agreement — ask our team for full terms on your strategy call. Nothing on this website constitutes a promise of specific earnings or employment outcomes, and every result shown belongs to a member who did the work required to achieve it.</p>
+      <p><strong>Results shown on this website — earnings, timelines and outcomes — reflect individual, self-reported member experiences and are not typical or guaranteed.</strong> Your results depend on your effort, experience and the companies you engage with. Academy does not guarantee employment or income. Accelerator includes a placement guarantee as defined in your enrolment agreement — full terms are covered on your strategy call.</p>
     </div>
   </div>
 </section>
@@ -2202,7 +2178,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
   function buildCard(w){
     var card = document.createElement('div');
-    card.className = 'win-card dark-island';
+    card.className = 'win-card';
     card.innerHTML =
       '<div class="win-top">'+
         '<div class="win-avatar">'+initials(w.name)+'</div>'+
