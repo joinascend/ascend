@@ -13,21 +13,28 @@
    ASCEND — TOKENS
 =================================================================== */
 :root{
-  --black:#060607;
-  --bg:#09090b;
-  --surface:#0f0f12;
-  --surface-2:#16161a;
-  --surface-3:#1f1f24;
-  --line:rgba(255,255,255,0.09);
-  --line-strong:rgba(255,255,255,0.16);
-  --white:#f5f5f3;
-  --grey-1:#adadb2;
-  --grey-2:#82828a;
-  --grey-3:#59595f;
+  --black:#050608;
+  --bg:#07080b;
+  --surface:#0d0f15;
+  --surface-2:#12141c;
+  --surface-3:#191c26;
+  --line:rgba(148,168,220,0.12);
+  --line-strong:rgba(158,180,230,0.22);
+  --white:#f5f6f8;
+  --grey-1:#a9adb8;
+  --grey-2:#7d818d;
+  --grey-3:#53565f;
   --silver:#b7bbc2;
   --silver-bright:#e2e4e8;
   --silver-dim:rgba(183,187,194,0.14);
   --silver-line:rgba(183,187,194,0.35);
+
+  --blue:#3d63f5;
+  --blue-bright:#7c9bff;
+  --blue-deep:#1f3aa8;
+  --blue-dim:rgba(61,99,245,0.14);
+  --blue-line:rgba(94,128,255,0.4);
+  --blue-glow:rgba(61,99,245,0.35);
 
   --font-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -36,6 +43,7 @@
   --gutter:clamp(24px, 5vw, 64px);
   --section-y:clamp(72px, 11vw, 160px);
   --ease:cubic-bezier(.16,.84,.44,1);
+  --radius:3px;
 }
 
 *,*::before,*::after{box-sizing:border-box;}
@@ -66,12 +74,31 @@ h1,h2,h3,h4,p{margin:0;}
   margin:0 auto;
   padding-left:var(--gutter);
   padding-right:var(--gutter);
+  position:relative;
+  z-index:1;
+}
+.section-glow{
+  position:absolute;
+  z-index:0;
+  border-radius:50%;
+  pointer-events:none;
+  filter:blur(2px);
+}
+.section-glow--tr{
+  top:-120px; right:-160px;
+  width:560px; height:560px;
+  background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(61,99,245,.12) 0%, transparent 72%);
+}
+.section-glow--bl{
+  bottom:-160px; left:-180px;
+  width:600px; height:600px;
+  background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(61,99,245,.10) 0%, transparent 72%);
 }
 ::selection{background:var(--silver-dim); color:var(--white);}
 
 /* focus visibility */
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
-  outline:1px solid var(--silver);
+  outline:1px solid var(--blue-bright);
   outline-offset:4px;
 }
 
@@ -84,17 +111,20 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-weight:600;
   letter-spacing:.22em;
   text-transform:uppercase;
-  color:var(--grey-1);
+  color:var(--blue-bright);
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
 }
 .eyebrow::before{
   content:"";
-  width:28px;
-  height:1px;
-  background:var(--silver-line);
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 10px 1px var(--blue-glow);
   display:inline-block;
+  flex:none;
 }
 .section-head{
   display:flex;
@@ -160,14 +190,16 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   border:1px solid transparent;
 }
 .btn-primary{
-  background:var(--white);
-  color:var(--black);
-  border-color:var(--white);
+  background:var(--blue);
+  color:var(--white);
+  border-color:var(--blue);
+  box-shadow:0 8px 24px -8px var(--blue-glow);
 }
 .btn-primary:hover{
-  background:var(--silver-bright);
-  border-color:var(--silver-bright);
-  box-shadow:0 0 0 1px var(--silver-bright), 0 8px 30px rgba(220,222,226,.12);
+  background:var(--blue-bright);
+  border-color:var(--blue-bright);
+  box-shadow:0 0 0 1px var(--blue-bright), 0 10px 36px -6px var(--blue-glow);
+  transform:translateY(-1px);
 }
 .btn-ghost{
   background:transparent;
@@ -175,8 +207,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   border-color:var(--line-strong);
 }
 .btn-ghost:hover{
-  border-color:var(--silver);
-  background:var(--silver-dim);
+  border-color:var(--blue-line);
+  background:var(--blue-dim);
+  color:var(--blue-bright);
 }
 .btn-sm{padding:12px 22px; font-size:11.5px;}
 .btn svg{width:14px;height:14px;flex:none;}
@@ -194,10 +227,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .nav.is-scrolled{
   padding:14px 0;
-  background:rgba(9,9,11,.82);
+  background:rgba(7,8,11,.82);
   backdrop-filter:blur(16px) saturate(140%);
   -webkit-backdrop-filter:blur(16px) saturate(140%);
   border-bottom:1px solid var(--line);
+  box-shadow:0 1px 0 0 rgba(61,99,245,.15), 0 20px 40px -20px rgba(0,0,0,.6);
 }
 .nav-inner{
   display:flex;
@@ -217,7 +251,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .logo-mark{
   width:9px;height:9px;
-  border:1px solid var(--silver);
+  background:var(--blue);
+  box-shadow:0 0 12px 1px var(--blue-glow);
   transform:rotate(45deg);
   flex:none;
 }
@@ -245,7 +280,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   left:0; right:100%;
   bottom:0;
   height:1px;
-  background:var(--silver);
+  background:var(--blue-bright);
+  box-shadow:0 0 8px var(--blue-glow);
   transition:right .35s var(--ease);
 }
 .nav-links a:hover{color:var(--white);}
@@ -293,6 +329,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .hero{
   padding:clamp(140px,20vw,196px) 0 var(--section-y);
   position:relative;
+  overflow:hidden;
 }
 .hero-bg-grid{
   position:absolute;
@@ -305,23 +342,34 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   mask-image:radial-gradient(ellipse 70% 55% at 50% 0%, black 10%, transparent 75%);
   -webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 0%, black 10%, transparent 75%);
 }
+.hero-glow{
+  position:absolute;
+  top:-10%;
+  left:50%;
+  width:min(1100px, 140vw);
+  height:640px;
+  transform:translateX(-50%);
+  z-index:0;
+  background:radial-gradient(ellipse 50% 50% at 50% 0%, rgba(61,99,245,.24) 0%, rgba(61,99,245,.08) 40%, transparent 72%);
+  pointer-events:none;
+}
 .hero-inner{position:relative; z-index:1;}
 .hero-top{
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
-  gap:28px;
+  gap:26px;
   margin-bottom:clamp(48px,7vw,88px);
 }
-.hero-eyebrow{justify-content:center;}
-.hero-eyebrow::before{display:none;}
-.hero-eyebrow::after{
-  content:"";
-  width:28px;
-  height:1px;
-  background:var(--silver-line);
+.badge-eyebrow{
+  justify-content:center;
+  border:1px solid var(--blue-line);
+  background:var(--blue-dim);
+  padding:8px 18px 8px 14px;
+  border-radius:999px;
 }
+.badge-eyebrow::before{box-shadow:0 0 10px 2px var(--blue-glow);}
 .hero-title{
   font-family:var(--font-display);
   font-weight:500;
@@ -334,7 +382,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .hero-title em{
   font-style:italic;
   font-weight:400;
-  color:var(--silver-bright);
+  color:var(--blue-bright);
+  text-shadow:0 0 42px var(--blue-glow);
 }
 .hero-sub{
   font-size:clamp(15px,1.5vw,18px);
@@ -361,7 +410,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   color:var(--grey-2);
 }
 .hero-meta span{display:flex; align-items:center; gap:8px;}
-.hero-meta i{width:5px;height:5px;background:var(--silver);border-radius:50%;display:inline-block;}
+.hero-meta i{width:5px;height:5px;background:var(--blue-bright);border-radius:50%;display:inline-block; box-shadow:0 0 6px var(--blue-glow);}
 
 /* Video frame */
 .vsl-frame-wrap{
@@ -376,8 +425,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   background:linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
   box-shadow:
     0 0 0 1px rgba(0,0,0,.4),
-    0 40px 100px -20px rgba(0,0,0,.8),
-    0 0 120px -40px rgba(183,187,194,.15);
+    0 40px 100px -20px rgba(0,0,0,.85),
+    0 0 140px -30px var(--blue-glow);
 }
 .vsl-corner{
   position:absolute;
@@ -388,7 +437,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .vsl-corner::before,.vsl-corner::after{
   content:"";
   position:absolute;
-  background:var(--silver);
+  background:var(--blue-bright);
+  box-shadow:0 0 8px var(--blue-glow);
 }
 .vsl-corner::before{width:100%;height:1px;top:0;}
 .vsl-corner::after{width:1px;height:100%;left:0;}
@@ -420,8 +470,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   z-index:2;
   width:78px;height:78px;
   border-radius:50%;
-  border:1px solid var(--silver-line);
-  background:rgba(255,255,255,.03);
+  border:1px solid var(--blue-line);
+  background:rgba(61,99,245,.1);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -433,18 +483,19 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   position:absolute;
   inset:-1px;
   border-radius:50%;
-  border:1px solid var(--silver-line);
+  border:1px solid var(--blue-line);
   opacity:0;
   transform:scale(1);
   transition:all .8s var(--ease);
 }
 .vsl-screen:hover .vsl-play{
-  background:var(--white);
-  border-color:var(--white);
+  background:var(--blue);
+  border-color:var(--blue-bright);
   transform:scale(1.06);
+  box-shadow:0 0 40px var(--blue-glow);
 }
-.vsl-screen:hover .vsl-play::before{opacity:1; transform:scale(1.35);}
-.vsl-screen:hover .vsl-play svg{fill:var(--black);}
+.vsl-screen:hover .vsl-play::before{opacity:1; transform:scale(1.35); border-color:var(--blue-bright);}
+.vsl-screen:hover .vsl-play svg{fill:var(--white);}
 .vsl-play svg{width:20px;height:20px;fill:var(--white); margin-left:3px; transition:fill .3s var(--ease);}
 .vsl-caption-row{
   position:absolute;
@@ -481,7 +532,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   color:var(--grey-2);
 }
 .vsl-below .rec{display:flex;align-items:center;gap:8px;}
-.vsl-below .rec i{width:6px;height:6px;border-radius:50%;background:var(--silver); box-shadow:0 0 8px var(--silver);}
+.vsl-below .rec i{width:6px;height:6px;border-radius:50%;background:var(--blue-bright); box-shadow:0 0 8px var(--blue-glow);}
 
 /* Calendly section (below hero) */
 .booking-panel{
@@ -496,8 +547,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   align-items:center;
   margin-bottom:32px;
 }
-.booking-head .eyebrow{justify-content:center;}
-.booking-head .eyebrow::before{display:none;}
 .booking-title{
   font-family:var(--font-display);
   font-size:clamp(26px,3.2vw,38px);
@@ -508,12 +557,17 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   border:1px solid var(--line-strong);
   background:var(--surface);
   padding:1px;
+  transition:box-shadow .5s var(--ease), border-color .5s var(--ease);
+}
+.calendly-frame:hover{
+  border-color:var(--blue-line);
+  box-shadow:0 0 60px -20px var(--blue-glow);
 }
 .calendly-inner{
   min-height:480px;
   border:1px solid var(--line);
   background:
-    repeating-linear-gradient(135deg, rgba(255,255,255,.015) 0px, rgba(255,255,255,.015) 1px, transparent 1px, transparent 14px),
+    repeating-linear-gradient(135deg, rgba(94,128,255,.03) 0px, rgba(94,128,255,.03) 1px, transparent 1px, transparent 14px),
     var(--bg);
   display:flex;
   flex-direction:column;
@@ -525,11 +579,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .calendly-icon{
   width:48px;height:48px;
-  border:1px solid var(--silver-line);
+  border:1px solid var(--blue-line);
+  background:var(--blue-dim);
   display:flex;align-items:center;justify-content:center;
   border-radius:50%;
 }
-.calendly-icon svg{width:20px;height:20px;stroke:var(--silver);}
+.calendly-icon svg{width:20px;height:20px;stroke:var(--blue-bright);}
 .calendly-inner h4{
   font-family:var(--font-body);
   font-weight:600;
@@ -556,12 +611,32 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   position:relative;
   overflow:hidden;
 }
+.statement::before{
+  content:"";
+  position:absolute;
+  top:0; left:50%;
+  width:min(720px,90%);
+  height:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg, transparent, var(--blue-line), transparent);
+}
+.statement::after{
+  content:"";
+  position:absolute;
+  top:50%; left:50%;
+  width:780px; height:780px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(61,99,245,.14) 0%, transparent 70%);
+  pointer-events:none;
+}
 .statement-inner{
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
   gap:40px;
+  position:relative;
+  z-index:1;
 }
 .statement-text{
   font-family:var(--font-display);
@@ -574,7 +649,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .statement-text .dim{color:var(--grey-3);}
 .statement-text .accent{
   font-style:italic;
-  color:var(--silver-bright);
+  color:var(--blue-bright);
+  text-shadow:0 0 50px var(--blue-glow);
 }
 .statement-sub{
   font-size:clamp(14px,1.3vw,16.5px);
@@ -588,25 +664,37 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .stats-bar{
   display:grid;
   grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--line);
+  background:var(--surface);
+  position:relative;
 }
 .stat-cell{
-  padding:clamp(32px,5vw,56px) clamp(16px,3vw,40px);
+  padding:clamp(36px,5vw,60px) clamp(16px,3vw,40px);
   text-align:center;
   border-right:1px solid var(--line);
   display:flex;
   flex-direction:column;
   gap:10px;
+  position:relative;
+}
+.stat-cell::before{
+  content:"";
+  position:absolute;
+  top:-1px; left:0; right:0;
+  height:2px;
+  background:linear-gradient(90deg, transparent, var(--blue), transparent);
+  opacity:.7;
 }
 .stat-cell:last-child{border-right:none;}
 .stat-num{
   font-family:var(--font-display);
-  font-size:clamp(40px,6vw,76px);
+  font-size:clamp(42px,6vw,78px);
   font-weight:500;
   line-height:1;
   font-variant-numeric:tabular-nums;
   color:var(--white);
 }
-.stat-num .unit{color:var(--silver); font-size:.55em; vertical-align:.35em; font-family:var(--font-body); font-weight:600;}
+.stat-num .unit{color:var(--blue-bright); font-size:.55em; vertical-align:.35em; font-family:var(--font-body); font-weight:600;}
 .stat-label{
   font-size:11px;
   letter-spacing:.14em;
@@ -630,24 +718,36 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   display:flex;
   flex-direction:column;
   gap:22px;
-  transition:background .4s var(--ease);
+  transition:background .4s var(--ease), box-shadow .4s var(--ease);
   position:relative;
 }
-.feature-card:hover{background:var(--surface);}
+.feature-card::before{
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0;
+  height:2px;
+  background:var(--blue);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .5s var(--ease);
+}
+.feature-card:hover{background:var(--surface); box-shadow:inset 0 0 60px -20px var(--blue-glow);}
+.feature-card:hover::before{transform:scaleX(1);}
 .feature-icon{
   width:44px;height:44px;
   border:1px solid var(--line-strong);
   display:flex;
   align-items:center;
   justify-content:center;
-  transition:border-color .4s var(--ease);
+  transition:border-color .4s var(--ease), box-shadow .4s var(--ease);
 }
-.feature-card:hover .feature-icon{border-color:var(--silver);}
-.feature-icon svg{width:19px;height:19px;stroke:var(--silver); fill:none;}
+.feature-card:hover .feature-icon{border-color:var(--blue-line); box-shadow:0 0 20px -4px var(--blue-glow);}
+.feature-icon svg{width:19px;height:19px;stroke:var(--silver); fill:none; transition:stroke .4s var(--ease);}
+.feature-card:hover .feature-icon svg{stroke:var(--blue-bright);}
 .feature-index{
   font-family:var(--font-display);
   font-size:13px;
-  color:var(--grey-3);
+  color:var(--blue-line);
   letter-spacing:.05em;
 }
 .feature-title{
@@ -693,23 +793,25 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   flex:none;
   width:300px;
   border:1px solid var(--line);
+  border-top:2px solid var(--blue-line);
   background:var(--surface);
   padding:22px;
   display:flex;
   flex-direction:column;
   gap:16px;
-  transition:border-color .3s var(--ease), transform .3s var(--ease);
+  transition:border-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
 }
-.win-card:hover{border-color:var(--line-strong); transform:translateY(-3px);}
+.win-card:hover{border-color:var(--line-strong); border-top-color:var(--blue-bright); transform:translateY(-4px); box-shadow:0 20px 40px -20px var(--blue-glow);}
 .win-top{display:flex; align-items:center; gap:12px;}
 .win-avatar{
   width:38px;height:38px;
-  border:1px solid var(--line-strong);
+  border:1px solid var(--blue-line);
+  background:var(--blue-dim);
   border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   font-family:var(--font-display);
   font-size:14px;
-  color:var(--silver);
+  color:var(--blue-bright);
   flex:none;
 }
 .win-name{font-size:13.5px; font-weight:600;}
@@ -723,7 +825,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   letter-spacing:.02em;
 }
 .win-path svg{width:11px;height:11px;stroke:var(--grey-3); flex:none;}
-.win-path .to{color:var(--silver-bright); font-weight:500;}
+.win-path .to{color:var(--blue-bright); font-weight:500;}
 .win-quote{
   font-size:13.5px;
   color:var(--grey-1);
@@ -741,7 +843,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .win-figure .amt{font-family:var(--font-display); font-size:21px; color:var(--white);}
 .win-figure .tag{font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--grey-3); display:flex; align-items:center; gap:5px;}
-.win-figure .tag svg{width:10px;height:10px;stroke:var(--silver);}
+.win-figure .tag svg{width:10px;height:10px;stroke:var(--blue-bright);}
 
 /* ===================================================================
    HOW IT WORKS — STEPPER
@@ -770,7 +872,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   position:absolute;
   top:-2px; left:0; right:100%;
   height:2px;
-  background:var(--silver);
+  background:var(--blue-bright);
+  box-shadow:0 0 12px var(--blue-glow);
   transition:right .5s var(--ease);
 }
 .step-tab.is-active{color:var(--white);}
@@ -781,7 +884,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   color:var(--grey-3);
   transition:color .4s var(--ease);
 }
-.step-tab.is-active .step-num{color:var(--silver);}
+.step-tab.is-active .step-num{color:var(--blue-bright);}
 .step-tab .step-name{
   font-family:var(--font-display);
   font-size:clamp(22px,2.4vw,30px);
@@ -822,9 +925,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-size:13.8px;
   color:var(--grey-1);
 }
-.step-checklist svg{width:14px;height:14px;stroke:var(--silver); flex:none; margin-top:2px;}
+.step-checklist svg{width:14px;height:14px;stroke:var(--blue-bright); flex:none; margin-top:2px;}
 .step-meta-card{
   border:1px solid var(--line);
+  border-left:2px solid var(--blue-line);
   background:var(--surface);
   padding:28px;
   display:flex;
@@ -840,7 +944,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .step-meta-row:last-child{border-bottom:none; padding-bottom:0;}
 .step-meta-row .k{color:var(--grey-2); letter-spacing:.06em; text-transform:uppercase; font-size:11px;}
-.step-meta-row .v{color:var(--white); font-weight:600; font-family:var(--font-display); font-size:17px;}
+.step-meta-row .v{color:var(--blue-bright); font-weight:600; font-family:var(--font-display); font-size:17px;}
 
 /* ===================================================================
    PLATFORM — TABS
@@ -870,7 +974,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   transition:color .3s var(--ease), border-color .3s var(--ease);
   white-space:nowrap;
 }
-.ptab.is-active{color:var(--white); border-color:var(--silver);}
+.ptab.is-active{color:var(--white); border-color:var(--blue-bright); box-shadow:0 1px 0 0 var(--blue-glow);}
 .ptab:hover{color:var(--white);}
 .platform-body{
   display:none;
@@ -886,7 +990,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   justify-content:center;
   border-right:1px solid var(--line);
 }
-.platform-copy .eyebrow::before{display:none;}
 .platform-copy h3{
   font-family:var(--font-display);
   font-size:clamp(24px,2.6vw,32px);
@@ -901,7 +1004,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   color:var(--grey-2);
   border:1px solid var(--line-strong);
   padding:6px 12px;
+  transition:border-color .3s var(--ease), color .3s var(--ease);
 }
+.ptag:hover{border-color:var(--blue-line); color:var(--blue-bright);}
 .platform-shot{
   padding:clamp(24px,3vw,40px);
   display:flex;
@@ -955,7 +1060,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .mock-row{display:flex; gap:12px;}
 .mock-block{background:var(--surface-2); border:1px solid var(--line); flex:1; min-height:34px;}
 .mock-block.tall{min-height:90px;}
-.mock-block.accent{border-color:var(--silver-line);}
+.mock-block.accent{border-color:var(--blue-line); background:var(--blue-dim); box-shadow:inset 0 0 24px -6px var(--blue-glow);}
 .mock-watermark{
   position:absolute;
   font-family:var(--font-display);
@@ -996,7 +1101,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   justify-content:center;
   position:relative;
   overflow:hidden;
+  transition:border-color .4s var(--ease), box-shadow .4s var(--ease);
 }
+.coach-card:hover .coach-photo{border-color:var(--blue-line); box-shadow:0 0 40px -14px var(--blue-glow);}
 .coach-photo::after{
   content:"";
   position:absolute;
@@ -1013,11 +1120,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   letter-spacing:.04em;
 }
 .coach-name{font-family:var(--font-display); font-size:22px; font-weight:500;}
-.coach-title{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--silver); margin-top:-12px;}
+.coach-title{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--blue-bright); margin-top:-12px;}
 .coach-bio{font-size:13.2px; color:var(--grey-1); line-height:1.65;}
 .coach-accolades{display:flex; flex-direction:column; gap:8px; margin-top:4px; padding-top:16px; border-top:1px solid var(--line);}
 .coach-accolades li{display:flex; gap:8px; align-items:center; font-size:11.5px; color:var(--grey-2);}
-.coach-accolades svg{width:11px;height:11px; stroke:var(--silver); flex:none;}
+.coach-accolades svg{width:11px;height:11px; stroke:var(--blue-bright); flex:none;}
 
 /* ===================================================================
    FINAL BOOKING
@@ -1042,7 +1149,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   border:1px solid var(--line-strong);
   background:var(--surface);
   padding:1px;
+  transition:box-shadow .5s var(--ease), border-color .5s var(--ease);
 }
+.final-calendly:hover{border-color:var(--blue-line); box-shadow:0 0 60px -20px var(--blue-glow);}
 .final-calendly .calendly-inner{min-height:400px;}
 .apply-card{
   border:1px solid var(--line);
@@ -1057,7 +1166,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .apply-card p{font-size:13.8px; color:var(--grey-1); line-height:1.65;}
 .apply-list{display:flex; flex-direction:column; gap:10px; margin:4px 0 8px;}
 .apply-list li{display:flex; gap:10px; font-size:12.5px; color:var(--grey-2);}
-.apply-list li span{color:var(--silver); font-family:var(--font-display); font-style:italic;}
+.apply-list li span{color:var(--blue-bright); font-family:var(--font-display); font-style:italic;}
 
 /* ===================================================================
    FOOTER
@@ -1081,7 +1190,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   display:flex; align-items:center; justify-content:center;
   transition:border-color .3s var(--ease), color .3s var(--ease);
 }
-.footer-social a:hover{border-color:var(--silver); color:var(--silver);}
+.footer-social a:hover{border-color:var(--blue-line); color:var(--blue-bright); box-shadow:0 0 16px -4px var(--blue-glow);}
 .footer-social svg{width:14px;height:14px;}
 .footer-col h5{
   font-size:11px;
@@ -1158,7 +1267,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
       <a href="#platform">Platform</a>
       <a href="#team">Team</a>
     </div>
-    <a href="#book" class="btn btn-ghost btn-sm nav-cta">Book a Call</a>
+    <a href="#book" class="btn btn-primary btn-sm nav-cta">Book a Call</a>
     <button class="nav-burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -1179,9 +1288,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 =============================================================== -->
 <header class="hero" id="top">
   <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="container hero-inner">
     <div class="hero-top reveal is-visible">
-      <div class="eyebrow hero-eyebrow">Est. Remote Sales Certification · Australia</div>
+      <div class="eyebrow badge-eyebrow">Est. Remote Sales Certification · Australia</div>
       <h1 class="hero-title">The Certification Standard for<br><em>Remote High-Ticket Sales.</em></h1>
       <p class="hero-sub">We train, certify and place ambitious 18–30 year olds into real closing roles with real companies — no cold outreach required to get started, no fluff, no guesswork.</p>
       <div class="hero-actions">
@@ -1220,7 +1330,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
     <div class="booking-panel reveal" id="book">
       <div class="booking-head">
-        <div class="eyebrow">Admissions</div>
+        <div class="eyebrow badge-eyebrow">Admissions</div>
         <h2 class="booking-title">Book a 15-Minute Call With Our Team</h2>
         <p class="booking-sub">We'll assess your fit for the next certification intake and walk you through timelines, cost and placement pathways.</p>
       </div>
@@ -1251,8 +1361,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============================================================
      STATS
 =============================================================== -->
-<section class="section" style="padding-top:0; padding-bottom:0;">
-  <div class="container" style="padding-left:0; padding-right:0;">
+<section class="section" style="padding-top:clamp(48px,6vw,88px); padding-bottom:clamp(48px,6vw,88px);">
+  <div class="container">
     <div class="stats-bar reveal reveal-stagger">
       <div class="stat-cell" style="--i:0">
         <div class="stat-num">200<span class="unit">+</span></div>
@@ -1274,6 +1384,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
      WHY SALES
 =============================================================== -->
 <section class="section section-alt" id="program">
+  <div class="section-glow section-glow--tr" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
       <div class="eyebrow reveal">Why This Skill</div>
@@ -1335,6 +1446,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
      HOW IT WORKS — STEPPER
 =============================================================== -->
 <section class="section section-alt" id="process">
+  <div class="section-glow section-glow--bl" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
       <div class="eyebrow reveal">The Pathway</div>
@@ -1418,6 +1530,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
      PLATFORM — TABS
 =============================================================== -->
 <section class="section" id="platform">
+  <div class="section-glow section-glow--tr" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
       <div class="eyebrow reveal">The Platform</div>
@@ -1548,6 +1661,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
      TEAM
 =============================================================== -->
 <section class="section section-alt" id="team">
+  <div class="section-glow section-glow--bl" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
       <div class="eyebrow reveal">Meet The Team</div>
@@ -1604,6 +1718,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
      FINAL BOOKING
 =============================================================== -->
 <section class="section" id="apply">
+  <div class="section-glow section-glow--tr" aria-hidden="true"></div>
   <div class="container">
     <div class="final-grid reveal">
       <div>
